@@ -102,21 +102,28 @@ namespace Estimator
             this.tbLaborSubtotal = new Estimator.CurrencyTextBox();
             this.lLaborSubtotal = new System.Windows.Forms.Label();
             this.gbMatOverview = new System.Windows.Forms.GroupBox();
+            this.plMatCostPerSquare = new Estimator.PriceLabel();
+            this.plMatTotalCost = new Estimator.PriceLabel();
+            this.plMatSubtotal = new Estimator.PriceLabel();
             this.tbSalesTax = new Estimator.PercentageTextBox();
             this.tbWaste = new Estimator.PercentageTextBox();
-            this.tbMatCostPerSquare = new Estimator.CurrencyTextBox();
             this.lMatCostPerSquare = new System.Windows.Forms.Label();
-            this.tbTotalMatCost = new Estimator.CurrencyTextBox();
             this.lTotalMatCost = new System.Windows.Forms.Label();
             this.lMatTax = new System.Windows.Forms.Label();
             this.lWaste = new System.Windows.Forms.Label();
-            this.tbMatSubtotal = new Estimator.CurrencyTextBox();
             this.lMatSubtotal = new System.Windows.Forms.Label();
             this.tabMats = new System.Windows.Forms.TabPage();
             this.gridViewMats = new Estimator.MaterialGridView();
             this.tabTrim = new System.Windows.Forms.TabPage();
+            this.plTest = new Estimator.PriceLabel();
             this.tabLabor = new System.Windows.Forms.TabPage();
             this.tabOther = new System.Windows.Forms.TabPage();
+            this.mColMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mColDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mColQNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mColUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mfWindowStrip.SuspendLayout();
             this.gbProjectDetails.SuspendLayout();
             this.gbSquares.SuspendLayout();
@@ -132,6 +139,7 @@ namespace Estimator
             this.gbMatOverview.SuspendLayout();
             this.tabMats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).BeginInit();
+            this.tabTrim.SuspendLayout();
             this.SuspendLayout();
             // 
             // mfWindowStrip
@@ -934,15 +942,15 @@ namespace Estimator
             // 
             // gbMatOverview
             // 
+            this.gbMatOverview.Controls.Add(this.plMatCostPerSquare);
+            this.gbMatOverview.Controls.Add(this.plMatTotalCost);
+            this.gbMatOverview.Controls.Add(this.plMatSubtotal);
             this.gbMatOverview.Controls.Add(this.tbSalesTax);
             this.gbMatOverview.Controls.Add(this.tbWaste);
-            this.gbMatOverview.Controls.Add(this.tbMatCostPerSquare);
             this.gbMatOverview.Controls.Add(this.lMatCostPerSquare);
-            this.gbMatOverview.Controls.Add(this.tbTotalMatCost);
             this.gbMatOverview.Controls.Add(this.lTotalMatCost);
             this.gbMatOverview.Controls.Add(this.lMatTax);
             this.gbMatOverview.Controls.Add(this.lWaste);
-            this.gbMatOverview.Controls.Add(this.tbMatSubtotal);
             this.gbMatOverview.Controls.Add(this.lMatSubtotal);
             this.gbMatOverview.Location = new System.Drawing.Point(3, 67);
             this.gbMatOverview.Name = "gbMatOverview";
@@ -950,6 +958,57 @@ namespace Estimator
             this.gbMatOverview.TabIndex = 3;
             this.gbMatOverview.TabStop = false;
             this.gbMatOverview.Text = "Materials";
+            // 
+            // plMatCostPerSquare
+            // 
+            this.plMatCostPerSquare.baseText = null;
+            this.plMatCostPerSquare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plMatCostPerSquare.Location = new System.Drawing.Point(233, 78);
+            this.plMatCostPerSquare.Name = "plMatCostPerSquare";
+            this.plMatCostPerSquare.resultText = null;
+            this.plMatCostPerSquare.Size = new System.Drawing.Size(75, 20);
+            this.plMatCostPerSquare.TabIndex = 38;
+            this.plMatCostPerSquare.Text = "hahaha";
+            this.plMatCostPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plMatCostPerSquare.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plMatTotalCost
+            // 
+            this.plMatTotalCost.baseText = null;
+            this.plMatTotalCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plMatTotalCost.Location = new System.Drawing.Point(233, 42);
+            this.plMatTotalCost.Name = "plMatTotalCost";
+            this.plMatTotalCost.resultText = null;
+            this.plMatTotalCost.Size = new System.Drawing.Size(75, 20);
+            this.plMatTotalCost.TabIndex = 37;
+            this.plMatTotalCost.Text = "hahaha";
+            this.plMatTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plMatTotalCost.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plMatSubtotal
+            // 
+            this.plMatSubtotal.baseText = null;
+            this.plMatSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plMatSubtotal.Location = new System.Drawing.Point(68, 23);
+            this.plMatSubtotal.Name = "plMatSubtotal";
+            this.plMatSubtotal.resultText = null;
+            this.plMatSubtotal.Size = new System.Drawing.Size(75, 20);
+            this.plMatSubtotal.TabIndex = 36;
+            this.plMatSubtotal.Text = "hahaha";
+            this.plMatSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plMatSubtotal.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // tbSalesTax
             // 
@@ -981,21 +1040,6 @@ namespace Estimator
             this.tbWaste.TabIndex = 34;
             this.tbWaste.Text = "0.00 %";
             // 
-            // tbMatCostPerSquare
-            // 
-            this.tbMatCostPerSquare.baseText = "0";
-            this.tbMatCostPerSquare.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbMatCostPerSquare.Location = new System.Drawing.Point(233, 78);
-            this.tbMatCostPerSquare.Name = "tbMatCostPerSquare";
-            this.tbMatCostPerSquare.resultText = "$0.00";
-            this.tbMatCostPerSquare.Size = new System.Drawing.Size(75, 20);
-            this.tbMatCostPerSquare.TabIndex = 32;
-            this.tbMatCostPerSquare.Text = "$0.00";
-            // 
             // lMatCostPerSquare
             // 
             this.lMatCostPerSquare.AutoSize = true;
@@ -1004,21 +1048,6 @@ namespace Estimator
             this.lMatCostPerSquare.Size = new System.Drawing.Size(49, 13);
             this.lMatCostPerSquare.TabIndex = 31;
             this.lMatCostPerSquare.Text = "Cost/Sq.";
-            // 
-            // tbTotalMatCost
-            // 
-            this.tbTotalMatCost.baseText = "0";
-            this.tbTotalMatCost.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbTotalMatCost.Location = new System.Drawing.Point(233, 41);
-            this.tbTotalMatCost.Name = "tbTotalMatCost";
-            this.tbTotalMatCost.resultText = "$0.00";
-            this.tbTotalMatCost.Size = new System.Drawing.Size(75, 20);
-            this.tbTotalMatCost.TabIndex = 30;
-            this.tbTotalMatCost.Text = "$0.00";
             // 
             // lTotalMatCost
             // 
@@ -1048,21 +1077,6 @@ namespace Estimator
             this.lWaste.TabIndex = 25;
             this.lWaste.Text = "Waste";
             // 
-            // tbMatSubtotal
-            // 
-            this.tbMatSubtotal.baseText = "0";
-            this.tbMatSubtotal.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbMatSubtotal.Location = new System.Drawing.Point(68, 23);
-            this.tbMatSubtotal.Name = "tbMatSubtotal";
-            this.tbMatSubtotal.resultText = "$0.00";
-            this.tbMatSubtotal.Size = new System.Drawing.Size(75, 20);
-            this.tbMatSubtotal.TabIndex = 24;
-            this.tbMatSubtotal.Text = "$0.00";
-            // 
             // lMatSubtotal
             // 
             this.lMatSubtotal.AutoSize = true;
@@ -1085,18 +1099,32 @@ namespace Estimator
             // 
             // gridViewMats
             // 
+            this.gridViewMats.AllowUserToAddRows = false;
+            this.gridViewMats.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.gridViewMats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridViewMats.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridViewMats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridViewMats.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mColMaterial,
+            this.mColDescription,
+            this.mColQNTY,
+            this.mColUnit,
+            this.mColUnitPrice,
+            this.mColTotal});
             this.gridViewMats.Location = new System.Drawing.Point(3, 3);
             this.gridViewMats.Name = "gridViewMats";
             this.gridViewMats.RowHeadersVisible = false;
             this.gridViewMats.Size = new System.Drawing.Size(675, 394);
+            this.gridViewMats.soffitPanelSquares = 0;
+            this.gridViewMats.standingSeamSquares = 0;
             this.gridViewMats.TabIndex = 0;
+            this.gridViewMats.totalSquares = 0;
+            this.gridViewMats.wallPanelSquares = 0;
             // 
             // tabTrim
             // 
+            this.tabTrim.Controls.Add(this.plTest);
             this.tabTrim.Location = new System.Drawing.Point(4, 22);
             this.tabTrim.Name = "tabTrim";
             this.tabTrim.Padding = new System.Windows.Forms.Padding(3);
@@ -1104,6 +1132,23 @@ namespace Estimator
             this.tabTrim.TabIndex = 1;
             this.tabTrim.Text = "Trim";
             this.tabTrim.UseVisualStyleBackColor = true;
+            // 
+            // plTest
+            // 
+            this.plTest.baseText = null;
+            this.plTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plTest.Location = new System.Drawing.Point(161, 81);
+            this.plTest.Name = "plTest";
+            this.plTest.resultText = null;
+            this.plTest.Size = new System.Drawing.Size(75, 20);
+            this.plTest.TabIndex = 0;
+            this.plTest.Text = "hahaha";
+            this.plTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plTest.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // tabLabor
             // 
@@ -1122,6 +1167,42 @@ namespace Estimator
             this.tabOther.TabIndex = 3;
             this.tabOther.Text = "Other";
             this.tabOther.UseVisualStyleBackColor = true;
+            // 
+            // mColMaterial
+            // 
+            this.mColMaterial.FillWeight = 417.7215F;
+            this.mColMaterial.HeaderText = "Material";
+            this.mColMaterial.Name = "mColMaterial";
+            // 
+            // mColDescription
+            // 
+            this.mColDescription.FillWeight = 131.6456F;
+            this.mColDescription.HeaderText = "Description";
+            this.mColDescription.Name = "mColDescription";
+            // 
+            // mColQNTY
+            // 
+            this.mColQNTY.FillWeight = 12.65823F;
+            this.mColQNTY.HeaderText = "QNTY";
+            this.mColQNTY.Name = "mColQNTY";
+            // 
+            // mColUnit
+            // 
+            this.mColUnit.FillWeight = 12.65823F;
+            this.mColUnit.HeaderText = "Unit";
+            this.mColUnit.Name = "mColUnit";
+            // 
+            // mColUnitPrice
+            // 
+            this.mColUnitPrice.FillWeight = 12.65823F;
+            this.mColUnitPrice.HeaderText = "Unit Price";
+            this.mColUnitPrice.Name = "mColUnitPrice";
+            // 
+            // mColTotal
+            // 
+            this.mColTotal.FillWeight = 12.65823F;
+            this.mColTotal.HeaderText = "Total";
+            this.mColTotal.Name = "mColTotal";
             // 
             // MainForm
             // 
@@ -1155,6 +1236,7 @@ namespace Estimator
             this.gbMatOverview.PerformLayout();
             this.tabMats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).EndInit();
+            this.tabTrim.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1229,9 +1311,6 @@ namespace Estimator
         private System.Windows.Forms.NumericUpDown tbWallPanelSquares;
         private System.Windows.Forms.NumericUpDown tbStandingSeamSquares;
         private PercentageTextBox tbWaste;
-        private CurrencyTextBox tbMatSubtotal;
-        private CurrencyTextBox tbMatCostPerSquare;
-        private CurrencyTextBox tbTotalMatCost;
         private CurrencyTextBox tbLaborCostPerSquare;
         private CurrencyTextBox tbLaborTotalCost;
         private CurrencyTextBox tbLaborSubtotal;
@@ -1252,6 +1331,16 @@ namespace Estimator
         private PercentageTextBox tbLaborBurden;
         private PercentageTextBox tbSalesTax;
         private MaterialGridView gridViewMats;
+        private PriceLabel plTest;
+        private PriceLabel plMatSubtotal;
+        private PriceLabel plMatTotalCost;
+        private PriceLabel plMatCostPerSquare;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mColMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mColDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mColQNTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mColUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mColUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mColTotal;
     }
 }
 

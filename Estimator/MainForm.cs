@@ -34,8 +34,9 @@ namespace Estimator
             tbWallPanelSquares.MouseDown += (sender, e) => nud_MouseDown(tbWallPanelSquares, sender, e);
             tbSoffitPanelSquares.MouseDown += (sender, e) => nud_MouseDown(tbSoffitPanelSquares, sender, e);
 
-            tbTotalMatCost.Text = "100";
-            //tbMatSubtotal.ReadOnly = true;
+            tbWaste.Validated += new EventHandler(TB_Validated);
+            tbSalesTax.Validated += new EventHandler(TB_Validated);
+
         }
 
         private void nud_MouseDown(NumericUpDown nud, object sender, MouseEventArgs e)
@@ -81,7 +82,12 @@ namespace Estimator
 
             gridViewMats.PerformCalculations();
 
-            tbMatSubtotal.Text = GetColumnSum(gridViewMats, 5).ToString();
+            plMatSubtotal.setText(GetColumnSum(gridViewMats, 5).ToString());
+            plMatTotalCost.setText((plMatSubtotal.value * (1 + tbWaste.percentageValue) * (1 + tbSalesTax.percentageValue)).ToString());
+
+            if (decimal.Parse(tbTotalSquares.Text) != 0)
+                plMatCostPerSquare.setText((plMatTotalCost.value / decimal.Parse(tbTotalSquares.Text)).ToString());
+            
         }
 
         private decimal GetColumnSum(DataGridView dgv, int colIndex)

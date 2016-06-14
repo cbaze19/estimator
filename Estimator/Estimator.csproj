@@ -70,6 +70,12 @@
     <Compile Include="PercentageTextBox.Designer.cs">
       <DependentUpon>PercentageTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="PriceLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PriceLabel.Designer.cs">
+      <DependentUpon>PriceLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
