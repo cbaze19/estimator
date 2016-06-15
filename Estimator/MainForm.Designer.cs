@@ -31,6 +31,7 @@ namespace Estimator
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mfWindowStrip = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
             this.miLoadEstimate = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,8 +115,24 @@ namespace Estimator
             this.lMatSubtotal = new System.Windows.Forms.Label();
             this.tabMats = new System.Windows.Forms.TabPage();
             this.gridViewMats = new Estimator.MaterialGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTrim = new System.Windows.Forms.TabPage();
-            this.plTest = new Estimator.PriceLabel();
+            this.lTotalFlatSheetsValue = new System.Windows.Forms.Label();
+            this.lTotalFlatSheets = new System.Windows.Forms.Label();
+            this.tbTrimPrice = new Estimator.CurrencyTextBox();
+            this.lTrimPrice = new System.Windows.Forms.Label();
+            this.trimGridView = new Estimator.MaterialGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabLabor = new System.Windows.Forms.TabPage();
             this.tabOther = new System.Windows.Forms.TabPage();
             this.mColMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,6 +157,7 @@ namespace Estimator
             this.tabMats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).BeginInit();
             this.tabTrim.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trimGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // mfWindowStrip
@@ -968,7 +986,7 @@ namespace Estimator
             this.plMatCostPerSquare.resultText = null;
             this.plMatCostPerSquare.Size = new System.Drawing.Size(75, 20);
             this.plMatCostPerSquare.TabIndex = 38;
-            this.plMatCostPerSquare.Text = "hahaha";
+            this.plMatCostPerSquare.Text = "$0.00";
             this.plMatCostPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.plMatCostPerSquare.value = new decimal(new int[] {
             0,
@@ -985,7 +1003,7 @@ namespace Estimator
             this.plMatTotalCost.resultText = null;
             this.plMatTotalCost.Size = new System.Drawing.Size(75, 20);
             this.plMatTotalCost.TabIndex = 37;
-            this.plMatTotalCost.Text = "hahaha";
+            this.plMatTotalCost.Text = "$0.00";
             this.plMatTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.plMatTotalCost.value = new decimal(new int[] {
             0,
@@ -1002,7 +1020,7 @@ namespace Estimator
             this.plMatSubtotal.resultText = null;
             this.plMatSubtotal.Size = new System.Drawing.Size(75, 20);
             this.plMatSubtotal.TabIndex = 36;
-            this.plMatSubtotal.Text = "hahaha";
+            this.plMatSubtotal.Text = "$0.00";
             this.plMatSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.plMatSubtotal.value = new decimal(new int[] {
             0,
@@ -1104,14 +1122,15 @@ namespace Estimator
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.gridViewMats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridViewMats.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridViewMats.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridViewMats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridViewMats.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mColMaterial,
-            this.mColDescription,
-            this.mColQNTY,
-            this.mColUnit,
-            this.mColUnitPrice,
-            this.mColTotal});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
             this.gridViewMats.Location = new System.Drawing.Point(3, 3);
             this.gridViewMats.Name = "gridViewMats";
             this.gridViewMats.RowHeadersVisible = false;
@@ -1122,9 +1141,55 @@ namespace Estimator
             this.gridViewMats.totalSquares = 0;
             this.gridViewMats.wallPanelSquares = 0;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.FillWeight = 1F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Material";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 165;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn2.FillWeight = 6.857334F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 165;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn3.FillWeight = 9.257402F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "QNTY";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 55;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 2.857223F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Unit";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 2.857223F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Unit Price";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.FillWeight = 2.857223F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
             // tabTrim
             // 
-            this.tabTrim.Controls.Add(this.plTest);
+            this.tabTrim.Controls.Add(this.lTotalFlatSheetsValue);
+            this.tabTrim.Controls.Add(this.lTotalFlatSheets);
+            this.tabTrim.Controls.Add(this.tbTrimPrice);
+            this.tabTrim.Controls.Add(this.lTrimPrice);
+            this.tabTrim.Controls.Add(this.trimGridView);
             this.tabTrim.Location = new System.Drawing.Point(4, 22);
             this.tabTrim.Name = "tabTrim";
             this.tabTrim.Padding = new System.Windows.Forms.Padding(3);
@@ -1133,22 +1198,115 @@ namespace Estimator
             this.tabTrim.Text = "Trim";
             this.tabTrim.UseVisualStyleBackColor = true;
             // 
-            // plTest
+            // lTotalFlatSheetsValue
             // 
-            this.plTest.baseText = null;
-            this.plTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.plTest.Location = new System.Drawing.Point(161, 81);
-            this.plTest.Name = "plTest";
-            this.plTest.resultText = null;
-            this.plTest.Size = new System.Drawing.Size(75, 20);
-            this.plTest.TabIndex = 0;
-            this.plTest.Text = "hahaha";
-            this.plTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.plTest.value = new decimal(new int[] {
+            this.lTotalFlatSheetsValue.AutoSize = true;
+            this.lTotalFlatSheetsValue.Location = new System.Drawing.Point(311, 19);
+            this.lTotalFlatSheetsValue.Name = "lTotalFlatSheetsValue";
+            this.lTotalFlatSheetsValue.Size = new System.Drawing.Size(13, 13);
+            this.lTotalFlatSheetsValue.TabIndex = 4;
+            this.lTotalFlatSheetsValue.Text = "0";
+            // 
+            // lTotalFlatSheets
+            // 
+            this.lTotalFlatSheets.AutoSize = true;
+            this.lTotalFlatSheets.Location = new System.Drawing.Point(218, 19);
+            this.lTotalFlatSheets.Name = "lTotalFlatSheets";
+            this.lTotalFlatSheets.Size = new System.Drawing.Size(90, 13);
+            this.lTotalFlatSheets.TabIndex = 3;
+            this.lTotalFlatSheets.Text = "Total Flat Sheets:";
+            // 
+            // tbTrimPrice
+            // 
+            this.tbTrimPrice.baseText = "0";
+            this.tbTrimPrice.currencyValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
+            this.tbTrimPrice.Location = new System.Drawing.Point(63, 16);
+            this.tbTrimPrice.Name = "tbTrimPrice";
+            this.tbTrimPrice.resultText = "$0.00";
+            this.tbTrimPrice.Size = new System.Drawing.Size(100, 20);
+            this.tbTrimPrice.TabIndex = 2;
+            this.tbTrimPrice.Text = "$0.00";
+            // 
+            // lTrimPrice
+            // 
+            this.lTrimPrice.AutoSize = true;
+            this.lTrimPrice.Location = new System.Drawing.Point(6, 19);
+            this.lTrimPrice.Name = "lTrimPrice";
+            this.lTrimPrice.Size = new System.Drawing.Size(54, 13);
+            this.lTrimPrice.TabIndex = 1;
+            this.lTrimPrice.Text = "Trim Price";
+            // 
+            // trimGridView
+            // 
+            this.trimGridView.AllowUserToAddRows = false;
+            this.trimGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.trimGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.trimGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.trimGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.trimGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.trimGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.trimGridView.Location = new System.Drawing.Point(3, 50);
+            this.trimGridView.Name = "trimGridView";
+            this.trimGridView.RowHeadersVisible = false;
+            this.trimGridView.Size = new System.Drawing.Size(675, 347);
+            this.trimGridView.soffitPanelSquares = 0;
+            this.trimGridView.standingSeamSquares = 0;
+            this.trimGridView.TabIndex = 0;
+            this.trimGridView.totalSquares = 0;
+            this.trimGridView.wallPanelSquares = 0;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn7.FillWeight = 417.7215F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Material";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 165;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn8.FillWeight = 131.6456F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 165;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn9.FillWeight = 12.65823F;
+            this.dataGridViewTextBoxColumn9.HeaderText = "QNTY";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 55;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.FillWeight = 12.65823F;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Unit";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.FillWeight = 12.65823F;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Unit Price";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.FillWeight = 12.65823F;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
             // tabLabor
             // 
@@ -1170,38 +1328,26 @@ namespace Estimator
             // 
             // mColMaterial
             // 
-            this.mColMaterial.FillWeight = 417.7215F;
-            this.mColMaterial.HeaderText = "Material";
             this.mColMaterial.Name = "mColMaterial";
             // 
             // mColDescription
             // 
-            this.mColDescription.FillWeight = 131.6456F;
-            this.mColDescription.HeaderText = "Description";
             this.mColDescription.Name = "mColDescription";
             // 
             // mColQNTY
             // 
-            this.mColQNTY.FillWeight = 12.65823F;
-            this.mColQNTY.HeaderText = "QNTY";
             this.mColQNTY.Name = "mColQNTY";
             // 
             // mColUnit
             // 
-            this.mColUnit.FillWeight = 12.65823F;
-            this.mColUnit.HeaderText = "Unit";
             this.mColUnit.Name = "mColUnit";
             // 
             // mColUnitPrice
             // 
-            this.mColUnitPrice.FillWeight = 12.65823F;
-            this.mColUnitPrice.HeaderText = "Unit Price";
             this.mColUnitPrice.Name = "mColUnitPrice";
             // 
             // mColTotal
             // 
-            this.mColTotal.FillWeight = 12.65823F;
-            this.mColTotal.HeaderText = "Total";
             this.mColTotal.Name = "mColTotal";
             // 
             // MainForm
@@ -1237,6 +1383,8 @@ namespace Estimator
             this.tabMats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).EndInit();
             this.tabTrim.ResumeLayout(false);
+            this.tabTrim.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trimGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1273,7 +1421,6 @@ namespace Estimator
         private System.Windows.Forms.GroupBox gbSquares;
         private System.Windows.Forms.Label lStandingSeam;
         private System.Windows.Forms.Label lWallPanelSquares;
-        private System.Windows.Forms.TextBox tbTotalSquares;
         private System.Windows.Forms.Label lTotalSquares;
         private System.Windows.Forms.Label lSoffitPanelSquares;
         private System.Windows.Forms.GroupBox gbEstimation;
@@ -1307,10 +1454,6 @@ namespace Estimator
         private System.Windows.Forms.Label lOverhead;
         private System.Windows.Forms.Label lSummarySubtotalBid;
         private System.Windows.Forms.Label lTotalBid;
-        private System.Windows.Forms.NumericUpDown tbSoffitPanelSquares;
-        private System.Windows.Forms.NumericUpDown tbWallPanelSquares;
-        private System.Windows.Forms.NumericUpDown tbStandingSeamSquares;
-        private PercentageTextBox tbWaste;
         private CurrencyTextBox tbLaborCostPerSquare;
         private CurrencyTextBox tbLaborTotalCost;
         private CurrencyTextBox tbLaborSubtotal;
@@ -1329,18 +1472,39 @@ namespace Estimator
         private CurrencyTextBox tbTotalBid;
         private PercentageTextBox tbOverhead;
         private PercentageTextBox tbLaborBurden;
-        private PercentageTextBox tbSalesTax;
-        private MaterialGridView gridViewMats;
-        private PriceLabel plTest;
-        private PriceLabel plMatSubtotal;
-        private PriceLabel plMatTotalCost;
-        private PriceLabel plMatCostPerSquare;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColQNTY;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColUnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColTotal;
+        private MaterialGridView trimGridView;
+        private System.Windows.Forms.Label lTrimPrice;
+        private CurrencyTextBox tbTrimPrice;
+        private System.Windows.Forms.Label lTotalFlatSheets;
+        private System.Windows.Forms.Label lTotalFlatSheetsValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        public System.Windows.Forms.TextBox tbTotalSquares;
+        public System.Windows.Forms.NumericUpDown tbStandingSeamSquares;
+        public System.Windows.Forms.NumericUpDown tbWallPanelSquares;
+        public System.Windows.Forms.NumericUpDown tbSoffitPanelSquares;
+        public PercentageTextBox tbWaste;
+        public PercentageTextBox tbSalesTax;
+        public PriceLabel plMatSubtotal;
+        public PriceLabel plMatTotalCost;
+        public PriceLabel plMatCostPerSquare;
+        public MaterialGridView gridViewMats;
     }
 }
 

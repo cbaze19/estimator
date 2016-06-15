@@ -16,8 +16,9 @@ namespace Estimator
         public MainForm()
         {
             InitializeComponent();
+            addGridRows();
             InitializeTextBoxListeners();
-            PerformCalculations();
+            Calculator.PerformCalculations(this);
         }
 
         private void InitializeTextBoxListeners()
@@ -37,11 +38,13 @@ namespace Estimator
             tbWaste.Validated += new EventHandler(TB_Validated);
             tbSalesTax.Validated += new EventHandler(TB_Validated);
 
+            gridViewMats.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
+
         }
 
         private void nud_MouseDown(NumericUpDown nud, object sender, MouseEventArgs e)
         {
-            nud.Select(0,tbStandingSeamSquares.Value.ToString().Length);
+            nud.Select(0, tbStandingSeamSquares.Value.ToString().Length);
         }
 
         private void dgError(object sender, DataGridViewDataErrorEventArgs e)
@@ -50,56 +53,52 @@ namespace Estimator
 
             if (e.Exception != null && e.Context.ToString().Contains(DataGridViewDataErrorContexts.Parsing.ToString()))
             {
-                MessageBox.Show("Must be currency format.");
+                MessageBox.Show("Must be in currency format.");
             }
         }
 
         private void TB_Validated(object sender, EventArgs e)
         {
             // Do all calculations...
-            PerformCalculations();
+            Calculator.PerformCalculations(this);
         }
 
         private void endEditCell(object sender, DataGridViewCellEventArgs e)
         {
-            PerformCalculations();
+            Calculator.PerformCalculations(this);
         }
 
-        private void PerformCalculations()
+        private void addGridRows()
         {
-            int standingSeamSquares = (int)tbStandingSeamSquares.Value;
-            int wallPanelSquares = (int)tbWallPanelSquares.Value;
-            int soffitPanelSquares = (int)tbSoffitPanelSquares.Value;
+            gridViewMats.Rows.Add("Panels", "", "", "Squares", 0.00, 0.00);
+            gridViewMats.Rows.Add("Cont. Clip", "", 0, "Feet", 0.15, 0.00);
+            gridViewMats.Rows.Add("Ins. Zee Rib", "", 0, "Feet", 0.10, 0.00);
+            gridViewMats.Rows.Add("Clip/Zee Screws", "", 0, "???", 0.09, 0.00);
+            gridViewMats.Rows.Add("Caulk", "", 0, "Tubes", 3.89, 0.00);
+            gridViewMats.Rows.Add("Insulation", "", 0, "???", 113.00, 0.00);
+            gridViewMats.Rows.Add("Decking", "", 0, "???", 25.00, 0.00);
+            gridViewMats.Rows.Add("Insulation/Decking Screws", "", 0, "???", 200.00, 0.00);
+            gridViewMats.Rows.Add("Underlayment", "", 0, "???", 40.00, 0.00);
+            gridViewMats.Rows.Add("Soffit Panels", "", 0, "???", 165.00, 0.00);
+            gridViewMats.Rows.Add("Ridge Vent", "", 0, "???", 10.00, 0.00);
+            gridViewMats.Rows.Add("Wall Panels", "", 0, "Squares", 165.00, 0.00);
+            gridViewMats.Rows.Add("Pop Rivets", "Prefinished", 0, "???", 58.00, 0.00);
+            gridViewMats.Rows.Add("Prefin Screws", "Self Drillers", 0, "???", 65.00, 0.00);
+            gridViewMats.Rows.Add("Prefin Screws", "Wood Grips", 0, "???", 125.00, 0.00);
+            gridViewMats.Rows.Add("Paint", "", 0, "???", 25.00, 0.00);
+            gridViewMats.Rows.Add("Misc", "", 0, "???", 0.00, 0.00);
 
-            int totalSquares = standingSeamSquares + wallPanelSquares + soffitPanelSquares;
-
-            tbTotalSquares.Text = totalSquares.ToString();
-
-            gridViewMats.totalSquares = int.Parse(tbTotalSquares.Text);
-            gridViewMats.standingSeamSquares = int.Parse(tbStandingSeamSquares.Text);
-            gridViewMats.wallPanelSquares = int.Parse(tbWallPanelSquares.Text);
-            gridViewMats.soffitPanelSquares = int.Parse(tbSoffitPanelSquares.Text);
-
-            gridViewMats.PerformCalculations();
-
-            plMatSubtotal.setText(GetColumnSum(gridViewMats, 5).ToString());
-            plMatTotalCost.setText((plMatSubtotal.value * (1 + tbWaste.percentageValue) * (1 + tbSalesTax.percentageValue)).ToString());
-
-            if (decimal.Parse(tbTotalSquares.Text) != 0)
-                plMatCostPerSquare.setText((plMatTotalCost.value / decimal.Parse(tbTotalSquares.Text)).ToString());
-            
-        }
-
-        private decimal GetColumnSum(DataGridView dgv, int colIndex)
-        {
-            decimal sum = 0;
-
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                sum = sum + (decimal)row.Cells[colIndex].Value;
-            }
-
-            return sum;
+            trimGridView.Rows.Add("Z-Closure", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Panel Starter", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Rec'r Cnt'r", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Coping", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Wall Flashing", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Fascia", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Hip/Ridge", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Valley", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Gutter", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Downspout", "", 0, "LF", 0.00, 0.00);
+            trimGridView.Rows.Add("Misc", "", 0, "LF", 0.00, 0.00);
         }
 
     }
