@@ -38,12 +38,12 @@ namespace Estimator
 
             tbWaste.Validated += new EventHandler(TB_Validated);
             tbSalesTax.Validated += new EventHandler(TB_Validated);
+            tbLaborBurden.Validated += new EventHandler(TB_Validated);
 
             gridViewMats.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
-            trimGridView.CellBeginEdit += new DataGridViewCellCancelEventHandler(TB_Validated);
-
-            
-
+            trimGridView.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
+            laborGridView.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
+            otherGridView.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
         }
 
         private void SetupGrids()
@@ -54,6 +54,16 @@ namespace Estimator
             }
 
             foreach (DataGridViewColumn column in trimGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            foreach (DataGridViewColumn column in laborGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            foreach (DataGridViewColumn column in otherGridView.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -119,6 +129,24 @@ namespace Estimator
             trimGridView.Rows.Add("Gutter", "", 0, "LF", 0.00, 0.00);
             trimGridView.Rows.Add("Downspout", "", 0, "LF", 0.00, 0.00);
             trimGridView.Rows.Add("Misc", "", 0, "LF", 0.00, 0.00);
+
+            laborGridView.Rows.Add("Stocking & Setup", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Shop Fabrication", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Underlayment", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Insulation/Decking", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Roof Panels", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Soffit Panels", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Misc Panels", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Gutter/Downspout Inft", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Rec'r/Cnt'r Inft", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Fascia/Coping Inft", "", 0, "", 0.00, 0.00);
+            laborGridView.Rows.Add("Misc Trim", "", 0, "", 0.00, 0.00);
+
+            for (int i = 0; i<15; i++)
+            {
+                otherGridView.Rows.Add("", "", 0, "", 0.00, 0.00);
+            }
+            
         }
 
     }

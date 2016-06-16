@@ -25,8 +25,7 @@ namespace Estimator
             form.gridViewMats.standingSeamSquares = int.Parse(form.tbStandingSeamSquares.Text);
             form.gridViewMats.wallPanelSquares = int.Parse(form.tbWallPanelSquares.Text);
             form.gridViewMats.soffitPanelSquares = int.Parse(form.tbSoffitPanelSquares.Text);
-
-            //form.gridViewMats.PerformCalculations();
+            
             DataGridViewCell panelQNTY = form.gridViewMats.Rows[0].Cells[2];
             panelQNTY.Value = standingSeamSquares;
 
@@ -81,8 +80,41 @@ namespace Estimator
             form.plMatSubtotal.setText((GetColumnSum(form.gridViewMats, 5) + GetColumnSum(form.trimGridView, 5)).ToString());
             form.plMatTotalCost.setText((form.plMatSubtotal.value * (1 + form.tbWaste.percentageValue) * (1 + form.tbSalesTax.percentageValue)).ToString());
 
+
+
+
+            form.laborGridView.Rows[4].Cells[2].Value = decimal.Parse(form.tbStandingSeamSquares.Value.ToString());
+            form.laborGridView.Rows[5].Cells[2].Value = decimal.Parse(form.tbSoffitPanelSquares.Value.ToString());
+            form.laborGridView.Rows[6].Cells[2].Value = decimal.Parse(form.tbWallPanelSquares.Value.ToString());
+
+            form.laborGridView.Rows[7].Cells[2].Value = decimal.Parse(form.trimGridView.Rows[8].Cells[2].Value.ToString()) + decimal.Parse(form.trimGridView.Rows[9].Cells[2].Value.ToString());
+            form.laborGridView.Rows[8].Cells[2].Value = decimal.Parse(form.trimGridView.Rows[2].Cells[2].Value.ToString());
+            form.laborGridView.Rows[9].Cells[2].Value = decimal.Parse(form.trimGridView.Rows[3].Cells[2].Value.ToString()) + decimal.Parse(form.trimGridView.Rows[5].Cells[2].Value.ToString());
+
+            form.laborGridView.Rows[10].Cells[2].Value = decimal.Parse(form.trimGridView.Rows[10].Cells[2].Value.ToString());
+
+            foreach (DataGridViewRow r in form.laborGridView.Rows)
+            {
+                r.Cells[5].Value = decimal.Parse(r.Cells[2].Value.ToString()) * decimal.Parse(r.Cells[4].Value.ToString());
+            }
+
+            //form.tbLaborSubtotal.text = GetColumnSum(form.laborGridView, 5).ToString();
+            form.plLaborSubtotal.setText(GetColumnSum(form.laborGridView, 5).ToString());
+            form.plLaborTotal.setText((form.plLaborSubtotal.value * (1 + form.tbLaborBurden.percentageValue)).ToString());
+
+            foreach (DataGridViewRow r in form.otherGridView.Rows)
+            {
+                if (!r.IsNewRow)
+                    r.Cells[5].Value = decimal.Parse(r.Cells[2].Value.ToString()) * decimal.Parse(r.Cells[4].Value.ToString());
+            }
+
+            form.plOtherTotalCost.setText(GetColumnSum(form.otherGridView, 5).ToString());
+
             if (decimal.Parse(form.tbTotalSquares.Text) != 0)
+            {
                 form.plMatCostPerSquare.setText((form.plMatTotalCost.value / decimal.Parse(form.tbTotalSquares.Text)).ToString());
+                form.plLaborCostPerSquare.setText((form.plLaborTotal.value / decimal.Parse(form.tbTotalSquares.Text)).ToString());
+            }
         }
 
         static public decimal GetColumnSum(DataGridView dgv, int colIndex)
@@ -91,7 +123,8 @@ namespace Estimator
 
             foreach (DataGridViewRow row in dgv.Rows)
             {
-                sum = sum + (decimal)row.Cells[colIndex].Value;
+                if (!row.IsNewRow)
+                sum = sum + decimal.Parse(row.Cells[colIndex].Value.ToString());
             }
 
             return sum;

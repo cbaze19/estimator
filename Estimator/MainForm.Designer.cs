@@ -30,8 +30,10 @@ namespace Estimator
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mfWindowStrip = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
             this.miLoadEstimate = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,72 +69,34 @@ namespace Estimator
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabOverview = new System.Windows.Forms.TabPage();
             this.gbSummary = new System.Windows.Forms.GroupBox();
-            this.tbOverhead = new Estimator.PercentageTextBox();
-            this.tbTotalBidPerSquare = new Estimator.CurrencyTextBox();
-            this.tbTotalBid = new Estimator.CurrencyTextBox();
             this.lTotalBid = new System.Windows.Forms.Label();
-            this.tbMiscAddOn2 = new Estimator.CurrencyTextBox();
             this.lMiscAddOn2 = new System.Windows.Forms.Label();
-            this.tbMiscAddOn1 = new Estimator.CurrencyTextBox();
             this.lMiscAddOn1 = new System.Windows.Forms.Label();
             this.lOverhead = new System.Windows.Forms.Label();
-            this.tbSummarySubtotalBidPerSquare = new Estimator.CurrencyTextBox();
-            this.tbSummarySubtotalBid = new Estimator.CurrencyTextBox();
             this.lSummarySubtotalBid = new System.Windows.Forms.Label();
-            this.tbSummaryOtherPerSquare = new Estimator.CurrencyTextBox();
-            this.tbSummaryLaborPerSquare = new Estimator.CurrencyTextBox();
-            this.tbSummaryMatPerSquare = new Estimator.CurrencyTextBox();
             this.lSummaryPerSquare = new System.Windows.Forms.Label();
             this.lSummaryTotals = new System.Windows.Forms.Label();
-            this.tbOtherCosts = new Estimator.CurrencyTextBox();
             this.lOtherCosts = new System.Windows.Forms.Label();
-            this.tbMetalRoofLabor = new Estimator.CurrencyTextBox();
             this.lMetalRoofLabor = new System.Windows.Forms.Label();
-            this.tbMetalRoofMaterial = new Estimator.CurrencyTextBox();
             this.lMetalRoofMaterial = new System.Windows.Forms.Label();
             this.gbOtherOverview = new System.Windows.Forms.GroupBox();
-            this.tbOtherTotalCost = new Estimator.CurrencyTextBox();
             this.lOtherTotalCost = new System.Windows.Forms.Label();
             this.gbLaborOverview = new System.Windows.Forms.GroupBox();
-            this.tbLaborBurden = new Estimator.PercentageTextBox();
-            this.tbLaborCostPerSquare = new Estimator.CurrencyTextBox();
             this.lLaborCostPerSquare = new System.Windows.Forms.Label();
-            this.tbLaborTotalCost = new Estimator.CurrencyTextBox();
             this.lLaborTotalCost = new System.Windows.Forms.Label();
             this.lLaborBurden = new System.Windows.Forms.Label();
-            this.tbLaborSubtotal = new Estimator.CurrencyTextBox();
             this.lLaborSubtotal = new System.Windows.Forms.Label();
             this.gbMatOverview = new System.Windows.Forms.GroupBox();
-            this.plMatCostPerSquare = new Estimator.PriceLabel();
-            this.plMatTotalCost = new Estimator.PriceLabel();
-            this.plMatSubtotal = new Estimator.PriceLabel();
-            this.tbSalesTax = new Estimator.PercentageTextBox();
-            this.tbWaste = new Estimator.PercentageTextBox();
             this.lMatCostPerSquare = new System.Windows.Forms.Label();
             this.lTotalMatCost = new System.Windows.Forms.Label();
             this.lMatTax = new System.Windows.Forms.Label();
             this.lWaste = new System.Windows.Forms.Label();
             this.lMatSubtotal = new System.Windows.Forms.Label();
             this.tabMats = new System.Windows.Forms.TabPage();
-            this.gridViewMats = new Estimator.MaterialGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabTrim = new System.Windows.Forms.TabPage();
             this.lTotalFlatSheetsValue = new System.Windows.Forms.Label();
             this.lTotalFlatSheets = new System.Windows.Forms.Label();
-            this.tbTrimPrice = new Estimator.CurrencyTextBox();
             this.lTrimPrice = new System.Windows.Forms.Label();
-            this.trimGridView = new Estimator.MaterialGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabLabor = new System.Windows.Forms.TabPage();
             this.tabOther = new System.Windows.Forms.TabPage();
             this.mColMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,6 +105,58 @@ namespace Estimator
             this.mColUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbOverhead = new Estimator.PercentageTextBox();
+            this.tbTotalBidPerSquare = new Estimator.CurrencyTextBox();
+            this.tbTotalBid = new Estimator.CurrencyTextBox();
+            this.tbMiscAddOn2 = new Estimator.CurrencyTextBox();
+            this.tbMiscAddOn1 = new Estimator.CurrencyTextBox();
+            this.tbSummarySubtotalBidPerSquare = new Estimator.CurrencyTextBox();
+            this.tbSummarySubtotalBid = new Estimator.CurrencyTextBox();
+            this.tbSummaryOtherPerSquare = new Estimator.CurrencyTextBox();
+            this.tbSummaryLaborPerSquare = new Estimator.CurrencyTextBox();
+            this.tbSummaryMatPerSquare = new Estimator.CurrencyTextBox();
+            this.tbOtherCosts = new Estimator.CurrencyTextBox();
+            this.tbMetalRoofLabor = new Estimator.CurrencyTextBox();
+            this.tbMetalRoofMaterial = new Estimator.CurrencyTextBox();
+            this.plOtherTotalCost = new Estimator.PriceLabel();
+            this.plLaborCostPerSquare = new Estimator.PriceLabel();
+            this.plLaborTotal = new Estimator.PriceLabel();
+            this.plLaborSubtotal = new Estimator.PriceLabel();
+            this.tbLaborBurden = new Estimator.PercentageTextBox();
+            this.plMatCostPerSquare = new Estimator.PriceLabel();
+            this.plMatTotalCost = new Estimator.PriceLabel();
+            this.plMatSubtotal = new Estimator.PriceLabel();
+            this.tbSalesTax = new Estimator.PercentageTextBox();
+            this.tbWaste = new Estimator.PercentageTextBox();
+            this.gridViewMats = new Estimator.MaterialGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbTrimPrice = new Estimator.CurrencyTextBox();
+            this.trimGridView = new Estimator.MaterialGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.laborGridView = new Estimator.MaterialGridView();
+            this.lColLaborItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lColDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lColQNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lColUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.otherGridView = new Estimator.MaterialGridView();
+            this.oColItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oColDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oColQNTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oColUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mfWindowStrip.SuspendLayout();
             this.gbProjectDetails.SuspendLayout();
             this.gbSquares.SuspendLayout();
@@ -155,9 +171,13 @@ namespace Estimator
             this.gbLaborOverview.SuspendLayout();
             this.gbMatOverview.SuspendLayout();
             this.tabMats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).BeginInit();
             this.tabTrim.SuspendLayout();
+            this.tabLabor.SuspendLayout();
+            this.tabOther.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trimGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laborGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.otherGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // mfWindowStrip
@@ -523,6 +543,333 @@ namespace Estimator
             this.gbSummary.TabStop = false;
             this.gbSummary.Text = "Summary";
             // 
+            // lTotalBid
+            // 
+            this.lTotalBid.AutoSize = true;
+            this.lTotalBid.Location = new System.Drawing.Point(27, 277);
+            this.lTotalBid.Name = "lTotalBid";
+            this.lTotalBid.Size = new System.Drawing.Size(49, 13);
+            this.lTotalBid.TabIndex = 45;
+            this.lTotalBid.Text = "Total Bid";
+            // 
+            // lMiscAddOn2
+            // 
+            this.lMiscAddOn2.AutoSize = true;
+            this.lMiscAddOn2.Location = new System.Drawing.Point(28, 234);
+            this.lMiscAddOn2.Name = "lMiscAddOn2";
+            this.lMiscAddOn2.Size = new System.Drawing.Size(68, 13);
+            this.lMiscAddOn2.TabIndex = 43;
+            this.lMiscAddOn2.Text = "Misc Add On";
+            // 
+            // lMiscAddOn1
+            // 
+            this.lMiscAddOn1.AutoSize = true;
+            this.lMiscAddOn1.Location = new System.Drawing.Point(28, 208);
+            this.lMiscAddOn1.Name = "lMiscAddOn1";
+            this.lMiscAddOn1.Size = new System.Drawing.Size(68, 13);
+            this.lMiscAddOn1.TabIndex = 41;
+            this.lMiscAddOn1.Text = "Misc Add On";
+            // 
+            // lOverhead
+            // 
+            this.lOverhead.AutoSize = true;
+            this.lOverhead.Location = new System.Drawing.Point(28, 179);
+            this.lOverhead.Name = "lOverhead";
+            this.lOverhead.Size = new System.Drawing.Size(54, 13);
+            this.lOverhead.TabIndex = 39;
+            this.lOverhead.Text = "Overhead";
+            this.lOverhead.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lSummarySubtotalBid
+            // 
+            this.lSummarySubtotalBid.AutoSize = true;
+            this.lSummarySubtotalBid.Location = new System.Drawing.Point(27, 143);
+            this.lSummarySubtotalBid.Name = "lSummarySubtotalBid";
+            this.lSummarySubtotalBid.Size = new System.Drawing.Size(64, 13);
+            this.lSummarySubtotalBid.TabIndex = 36;
+            this.lSummarySubtotalBid.Text = "Subtotal Bid";
+            // 
+            // lSummaryPerSquare
+            // 
+            this.lSummaryPerSquare.AutoSize = true;
+            this.lSummaryPerSquare.Location = new System.Drawing.Point(231, 22);
+            this.lSummaryPerSquare.Name = "lSummaryPerSquare";
+            this.lSummaryPerSquare.Size = new System.Drawing.Size(60, 13);
+            this.lSummaryPerSquare.TabIndex = 31;
+            this.lSummaryPerSquare.Text = "Per Square";
+            // 
+            // lSummaryTotals
+            // 
+            this.lSummaryTotals.AutoSize = true;
+            this.lSummaryTotals.Location = new System.Drawing.Point(131, 22);
+            this.lSummaryTotals.Name = "lSummaryTotals";
+            this.lSummaryTotals.Size = new System.Drawing.Size(36, 13);
+            this.lSummaryTotals.TabIndex = 30;
+            this.lSummaryTotals.Text = "Totals";
+            // 
+            // lOtherCosts
+            // 
+            this.lOtherCosts.AutoSize = true;
+            this.lOtherCosts.Location = new System.Drawing.Point(27, 102);
+            this.lOtherCosts.Name = "lOtherCosts";
+            this.lOtherCosts.Size = new System.Drawing.Size(62, 13);
+            this.lOtherCosts.TabIndex = 29;
+            this.lOtherCosts.Text = "Other Costs";
+            // 
+            // lMetalRoofLabor
+            // 
+            this.lMetalRoofLabor.AutoSize = true;
+            this.lMetalRoofLabor.Location = new System.Drawing.Point(27, 74);
+            this.lMetalRoofLabor.Name = "lMetalRoofLabor";
+            this.lMetalRoofLabor.Size = new System.Drawing.Size(34, 13);
+            this.lMetalRoofLabor.TabIndex = 27;
+            this.lMetalRoofLabor.Text = "Labor";
+            // 
+            // lMetalRoofMaterial
+            // 
+            this.lMetalRoofMaterial.AutoSize = true;
+            this.lMetalRoofMaterial.Location = new System.Drawing.Point(27, 45);
+            this.lMetalRoofMaterial.Name = "lMetalRoofMaterial";
+            this.lMetalRoofMaterial.Size = new System.Drawing.Size(44, 13);
+            this.lMetalRoofMaterial.TabIndex = 25;
+            this.lMetalRoofMaterial.Text = "Material";
+            // 
+            // gbOtherOverview
+            // 
+            this.gbOtherOverview.Controls.Add(this.plOtherTotalCost);
+            this.gbOtherOverview.Controls.Add(this.lOtherTotalCost);
+            this.gbOtherOverview.Location = new System.Drawing.Point(3, 341);
+            this.gbOtherOverview.Name = "gbOtherOverview";
+            this.gbOtherOverview.Size = new System.Drawing.Size(339, 56);
+            this.gbOtherOverview.TabIndex = 34;
+            this.gbOtherOverview.TabStop = false;
+            this.gbOtherOverview.Text = "Other";
+            // 
+            // lOtherTotalCost
+            // 
+            this.lOtherTotalCost.AutoSize = true;
+            this.lOtherTotalCost.Location = new System.Drawing.Point(97, 23);
+            this.lOtherTotalCost.Name = "lOtherTotalCost";
+            this.lOtherTotalCost.Size = new System.Drawing.Size(55, 13);
+            this.lOtherTotalCost.TabIndex = 33;
+            this.lOtherTotalCost.Text = "Total Cost";
+            // 
+            // gbLaborOverview
+            // 
+            this.gbLaborOverview.Controls.Add(this.plLaborCostPerSquare);
+            this.gbLaborOverview.Controls.Add(this.plLaborTotal);
+            this.gbLaborOverview.Controls.Add(this.plLaborSubtotal);
+            this.gbLaborOverview.Controls.Add(this.tbLaborBurden);
+            this.gbLaborOverview.Controls.Add(this.lLaborCostPerSquare);
+            this.gbLaborOverview.Controls.Add(this.lLaborTotalCost);
+            this.gbLaborOverview.Controls.Add(this.lLaborBurden);
+            this.gbLaborOverview.Controls.Add(this.lLaborSubtotal);
+            this.gbLaborOverview.Location = new System.Drawing.Point(3, 204);
+            this.gbLaborOverview.Name = "gbLaborOverview";
+            this.gbLaborOverview.Size = new System.Drawing.Size(339, 131);
+            this.gbLaborOverview.TabIndex = 33;
+            this.gbLaborOverview.TabStop = false;
+            this.gbLaborOverview.Text = "Labor";
+            // 
+            // lLaborCostPerSquare
+            // 
+            this.lLaborCostPerSquare.AutoSize = true;
+            this.lLaborCostPerSquare.Location = new System.Drawing.Point(175, 79);
+            this.lLaborCostPerSquare.Name = "lLaborCostPerSquare";
+            this.lLaborCostPerSquare.Size = new System.Drawing.Size(49, 13);
+            this.lLaborCostPerSquare.TabIndex = 31;
+            this.lLaborCostPerSquare.Text = "Cost/Sq.";
+            // 
+            // lLaborTotalCost
+            // 
+            this.lLaborTotalCost.AutoSize = true;
+            this.lLaborTotalCost.Location = new System.Drawing.Point(175, 42);
+            this.lLaborTotalCost.Name = "lLaborTotalCost";
+            this.lLaborTotalCost.Size = new System.Drawing.Size(55, 13);
+            this.lLaborTotalCost.TabIndex = 29;
+            this.lLaborTotalCost.Text = "Total Cost";
+            // 
+            // lLaborBurden
+            // 
+            this.lLaborBurden.AutoSize = true;
+            this.lLaborBurden.Location = new System.Drawing.Point(23, 78);
+            this.lLaborBurden.Name = "lLaborBurden";
+            this.lLaborBurden.Size = new System.Drawing.Size(41, 13);
+            this.lLaborBurden.TabIndex = 25;
+            this.lLaborBurden.Text = "Burden";
+            this.lLaborBurden.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lLaborSubtotal
+            // 
+            this.lLaborSubtotal.AutoSize = true;
+            this.lLaborSubtotal.Location = new System.Drawing.Point(23, 43);
+            this.lLaborSubtotal.Name = "lLaborSubtotal";
+            this.lLaborSubtotal.Size = new System.Drawing.Size(46, 13);
+            this.lLaborSubtotal.TabIndex = 0;
+            this.lLaborSubtotal.Text = "Subtotal";
+            // 
+            // gbMatOverview
+            // 
+            this.gbMatOverview.Controls.Add(this.plMatCostPerSquare);
+            this.gbMatOverview.Controls.Add(this.plMatTotalCost);
+            this.gbMatOverview.Controls.Add(this.plMatSubtotal);
+            this.gbMatOverview.Controls.Add(this.tbSalesTax);
+            this.gbMatOverview.Controls.Add(this.tbWaste);
+            this.gbMatOverview.Controls.Add(this.lMatCostPerSquare);
+            this.gbMatOverview.Controls.Add(this.lTotalMatCost);
+            this.gbMatOverview.Controls.Add(this.lMatTax);
+            this.gbMatOverview.Controls.Add(this.lWaste);
+            this.gbMatOverview.Controls.Add(this.lMatSubtotal);
+            this.gbMatOverview.Location = new System.Drawing.Point(3, 67);
+            this.gbMatOverview.Name = "gbMatOverview";
+            this.gbMatOverview.Size = new System.Drawing.Size(339, 131);
+            this.gbMatOverview.TabIndex = 3;
+            this.gbMatOverview.TabStop = false;
+            this.gbMatOverview.Text = "Materials";
+            // 
+            // lMatCostPerSquare
+            // 
+            this.lMatCostPerSquare.AutoSize = true;
+            this.lMatCostPerSquare.Location = new System.Drawing.Point(178, 82);
+            this.lMatCostPerSquare.Name = "lMatCostPerSquare";
+            this.lMatCostPerSquare.Size = new System.Drawing.Size(49, 13);
+            this.lMatCostPerSquare.TabIndex = 31;
+            this.lMatCostPerSquare.Text = "Cost/Sq.";
+            // 
+            // lTotalMatCost
+            // 
+            this.lTotalMatCost.AutoSize = true;
+            this.lTotalMatCost.Location = new System.Drawing.Point(178, 45);
+            this.lTotalMatCost.Name = "lTotalMatCost";
+            this.lTotalMatCost.Size = new System.Drawing.Size(55, 13);
+            this.lTotalMatCost.TabIndex = 29;
+            this.lTotalMatCost.Text = "Total Cost";
+            // 
+            // lMatTax
+            // 
+            this.lMatTax.AutoSize = true;
+            this.lMatTax.Location = new System.Drawing.Point(10, 99);
+            this.lMatTax.Name = "lMatTax";
+            this.lMatTax.Size = new System.Drawing.Size(54, 13);
+            this.lMatTax.TabIndex = 27;
+            this.lMatTax.Text = "Sales Tax";
+            this.lMatTax.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lWaste
+            // 
+            this.lWaste.AutoSize = true;
+            this.lWaste.Location = new System.Drawing.Point(11, 62);
+            this.lWaste.Name = "lWaste";
+            this.lWaste.Size = new System.Drawing.Size(38, 13);
+            this.lWaste.TabIndex = 25;
+            this.lWaste.Text = "Waste";
+            // 
+            // lMatSubtotal
+            // 
+            this.lMatSubtotal.AutoSize = true;
+            this.lMatSubtotal.Location = new System.Drawing.Point(10, 27);
+            this.lMatSubtotal.Name = "lMatSubtotal";
+            this.lMatSubtotal.Size = new System.Drawing.Size(46, 13);
+            this.lMatSubtotal.TabIndex = 0;
+            this.lMatSubtotal.Text = "Subtotal";
+            // 
+            // tabMats
+            // 
+            this.tabMats.Controls.Add(this.gridViewMats);
+            this.tabMats.Location = new System.Drawing.Point(4, 22);
+            this.tabMats.Name = "tabMats";
+            this.tabMats.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMats.Size = new System.Drawing.Size(681, 400);
+            this.tabMats.TabIndex = 0;
+            this.tabMats.Text = "Materials";
+            this.tabMats.UseVisualStyleBackColor = true;
+            // 
+            // tabTrim
+            // 
+            this.tabTrim.Controls.Add(this.lTotalFlatSheetsValue);
+            this.tabTrim.Controls.Add(this.lTotalFlatSheets);
+            this.tabTrim.Controls.Add(this.lTrimPrice);
+            this.tabTrim.Controls.Add(this.tbTrimPrice);
+            this.tabTrim.Controls.Add(this.trimGridView);
+            this.tabTrim.Location = new System.Drawing.Point(4, 22);
+            this.tabTrim.Name = "tabTrim";
+            this.tabTrim.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTrim.Size = new System.Drawing.Size(681, 400);
+            this.tabTrim.TabIndex = 1;
+            this.tabTrim.Text = "Trim";
+            this.tabTrim.UseVisualStyleBackColor = true;
+            // 
+            // lTotalFlatSheetsValue
+            // 
+            this.lTotalFlatSheetsValue.AutoSize = true;
+            this.lTotalFlatSheetsValue.Location = new System.Drawing.Point(311, 19);
+            this.lTotalFlatSheetsValue.Name = "lTotalFlatSheetsValue";
+            this.lTotalFlatSheetsValue.Size = new System.Drawing.Size(13, 13);
+            this.lTotalFlatSheetsValue.TabIndex = 4;
+            this.lTotalFlatSheetsValue.Text = "0";
+            // 
+            // lTotalFlatSheets
+            // 
+            this.lTotalFlatSheets.AutoSize = true;
+            this.lTotalFlatSheets.Location = new System.Drawing.Point(218, 19);
+            this.lTotalFlatSheets.Name = "lTotalFlatSheets";
+            this.lTotalFlatSheets.Size = new System.Drawing.Size(90, 13);
+            this.lTotalFlatSheets.TabIndex = 3;
+            this.lTotalFlatSheets.Text = "Total Flat Sheets:";
+            // 
+            // lTrimPrice
+            // 
+            this.lTrimPrice.AutoSize = true;
+            this.lTrimPrice.Location = new System.Drawing.Point(6, 19);
+            this.lTrimPrice.Name = "lTrimPrice";
+            this.lTrimPrice.Size = new System.Drawing.Size(54, 13);
+            this.lTrimPrice.TabIndex = 1;
+            this.lTrimPrice.Text = "Trim Price";
+            // 
+            // tabLabor
+            // 
+            this.tabLabor.Controls.Add(this.laborGridView);
+            this.tabLabor.Location = new System.Drawing.Point(4, 22);
+            this.tabLabor.Name = "tabLabor";
+            this.tabLabor.Size = new System.Drawing.Size(681, 400);
+            this.tabLabor.TabIndex = 2;
+            this.tabLabor.Text = "Labor";
+            this.tabLabor.UseVisualStyleBackColor = true;
+            // 
+            // tabOther
+            // 
+            this.tabOther.Controls.Add(this.otherGridView);
+            this.tabOther.Location = new System.Drawing.Point(4, 22);
+            this.tabOther.Name = "tabOther";
+            this.tabOther.Size = new System.Drawing.Size(681, 400);
+            this.tabOther.TabIndex = 3;
+            this.tabOther.Text = "Other";
+            this.tabOther.UseVisualStyleBackColor = true;
+            // 
+            // mColMaterial
+            // 
+            this.mColMaterial.Name = "mColMaterial";
+            // 
+            // mColDescription
+            // 
+            this.mColDescription.Name = "mColDescription";
+            // 
+            // mColQNTY
+            // 
+            this.mColQNTY.Name = "mColQNTY";
+            // 
+            // mColUnit
+            // 
+            this.mColUnit.Name = "mColUnit";
+            // 
+            // mColUnitPrice
+            // 
+            this.mColUnitPrice.Name = "mColUnitPrice";
+            // 
+            // mColTotal
+            // 
+            this.mColTotal.Name = "mColTotal";
+            // 
             // tbOverhead
             // 
             this.tbOverhead.baseText = "0";
@@ -568,15 +915,6 @@ namespace Estimator
             this.tbTotalBid.TabIndex = 44;
             this.tbTotalBid.Text = "$0.00";
             // 
-            // lTotalBid
-            // 
-            this.lTotalBid.AutoSize = true;
-            this.lTotalBid.Location = new System.Drawing.Point(27, 277);
-            this.lTotalBid.Name = "lTotalBid";
-            this.lTotalBid.Size = new System.Drawing.Size(49, 13);
-            this.lTotalBid.TabIndex = 45;
-            this.lTotalBid.Text = "Total Bid";
-            // 
             // tbMiscAddOn2
             // 
             this.tbMiscAddOn2.baseText = "0";
@@ -592,15 +930,6 @@ namespace Estimator
             this.tbMiscAddOn2.TabIndex = 42;
             this.tbMiscAddOn2.Text = "$0.00";
             // 
-            // lMiscAddOn2
-            // 
-            this.lMiscAddOn2.AutoSize = true;
-            this.lMiscAddOn2.Location = new System.Drawing.Point(28, 234);
-            this.lMiscAddOn2.Name = "lMiscAddOn2";
-            this.lMiscAddOn2.Size = new System.Drawing.Size(68, 13);
-            this.lMiscAddOn2.TabIndex = 43;
-            this.lMiscAddOn2.Text = "Misc Add On";
-            // 
             // tbMiscAddOn1
             // 
             this.tbMiscAddOn1.baseText = "0";
@@ -615,25 +944,6 @@ namespace Estimator
             this.tbMiscAddOn1.Size = new System.Drawing.Size(79, 20);
             this.tbMiscAddOn1.TabIndex = 40;
             this.tbMiscAddOn1.Text = "$0.00";
-            // 
-            // lMiscAddOn1
-            // 
-            this.lMiscAddOn1.AutoSize = true;
-            this.lMiscAddOn1.Location = new System.Drawing.Point(28, 208);
-            this.lMiscAddOn1.Name = "lMiscAddOn1";
-            this.lMiscAddOn1.Size = new System.Drawing.Size(68, 13);
-            this.lMiscAddOn1.TabIndex = 41;
-            this.lMiscAddOn1.Text = "Misc Add On";
-            // 
-            // lOverhead
-            // 
-            this.lOverhead.AutoSize = true;
-            this.lOverhead.Location = new System.Drawing.Point(28, 179);
-            this.lOverhead.Name = "lOverhead";
-            this.lOverhead.Size = new System.Drawing.Size(54, 13);
-            this.lOverhead.TabIndex = 39;
-            this.lOverhead.Text = "Overhead";
-            this.lOverhead.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tbSummarySubtotalBidPerSquare
             // 
@@ -664,15 +974,6 @@ namespace Estimator
             this.tbSummarySubtotalBid.Size = new System.Drawing.Size(79, 20);
             this.tbSummarySubtotalBid.TabIndex = 35;
             this.tbSummarySubtotalBid.Text = "$0.00";
-            // 
-            // lSummarySubtotalBid
-            // 
-            this.lSummarySubtotalBid.AutoSize = true;
-            this.lSummarySubtotalBid.Location = new System.Drawing.Point(27, 143);
-            this.lSummarySubtotalBid.Name = "lSummarySubtotalBid";
-            this.lSummarySubtotalBid.Size = new System.Drawing.Size(64, 13);
-            this.lSummarySubtotalBid.TabIndex = 36;
-            this.lSummarySubtotalBid.Text = "Subtotal Bid";
             // 
             // tbSummaryOtherPerSquare
             // 
@@ -719,24 +1020,6 @@ namespace Estimator
             this.tbSummaryMatPerSquare.TabIndex = 32;
             this.tbSummaryMatPerSquare.Text = "$0.00";
             // 
-            // lSummaryPerSquare
-            // 
-            this.lSummaryPerSquare.AutoSize = true;
-            this.lSummaryPerSquare.Location = new System.Drawing.Point(231, 22);
-            this.lSummaryPerSquare.Name = "lSummaryPerSquare";
-            this.lSummaryPerSquare.Size = new System.Drawing.Size(60, 13);
-            this.lSummaryPerSquare.TabIndex = 31;
-            this.lSummaryPerSquare.Text = "Per Square";
-            // 
-            // lSummaryTotals
-            // 
-            this.lSummaryTotals.AutoSize = true;
-            this.lSummaryTotals.Location = new System.Drawing.Point(131, 22);
-            this.lSummaryTotals.Name = "lSummaryTotals";
-            this.lSummaryTotals.Size = new System.Drawing.Size(36, 13);
-            this.lSummaryTotals.TabIndex = 30;
-            this.lSummaryTotals.Text = "Totals";
-            // 
             // tbOtherCosts
             // 
             this.tbOtherCosts.baseText = "0";
@@ -751,15 +1034,6 @@ namespace Estimator
             this.tbOtherCosts.Size = new System.Drawing.Size(79, 20);
             this.tbOtherCosts.TabIndex = 28;
             this.tbOtherCosts.Text = "$0.00";
-            // 
-            // lOtherCosts
-            // 
-            this.lOtherCosts.AutoSize = true;
-            this.lOtherCosts.Location = new System.Drawing.Point(27, 102);
-            this.lOtherCosts.Name = "lOtherCosts";
-            this.lOtherCosts.Size = new System.Drawing.Size(62, 13);
-            this.lOtherCosts.TabIndex = 29;
-            this.lOtherCosts.Text = "Other Costs";
             // 
             // tbMetalRoofLabor
             // 
@@ -776,15 +1050,6 @@ namespace Estimator
             this.tbMetalRoofLabor.TabIndex = 26;
             this.tbMetalRoofLabor.Text = "$0.00";
             // 
-            // lMetalRoofLabor
-            // 
-            this.lMetalRoofLabor.AutoSize = true;
-            this.lMetalRoofLabor.Location = new System.Drawing.Point(27, 74);
-            this.lMetalRoofLabor.Name = "lMetalRoofLabor";
-            this.lMetalRoofLabor.Size = new System.Drawing.Size(34, 13);
-            this.lMetalRoofLabor.TabIndex = 27;
-            this.lMetalRoofLabor.Text = "Labor";
-            // 
             // tbMetalRoofMaterial
             // 
             this.tbMetalRoofMaterial.baseText = "0";
@@ -800,66 +1065,73 @@ namespace Estimator
             this.tbMetalRoofMaterial.TabIndex = 24;
             this.tbMetalRoofMaterial.Text = "$0.00";
             // 
-            // lMetalRoofMaterial
+            // plOtherTotalCost
             // 
-            this.lMetalRoofMaterial.AutoSize = true;
-            this.lMetalRoofMaterial.Location = new System.Drawing.Point(27, 45);
-            this.lMetalRoofMaterial.Name = "lMetalRoofMaterial";
-            this.lMetalRoofMaterial.Size = new System.Drawing.Size(44, 13);
-            this.lMetalRoofMaterial.TabIndex = 25;
-            this.lMetalRoofMaterial.Text = "Material";
-            // 
-            // gbOtherOverview
-            // 
-            this.gbOtherOverview.Controls.Add(this.tbOtherTotalCost);
-            this.gbOtherOverview.Controls.Add(this.lOtherTotalCost);
-            this.gbOtherOverview.Location = new System.Drawing.Point(3, 341);
-            this.gbOtherOverview.Name = "gbOtherOverview";
-            this.gbOtherOverview.Size = new System.Drawing.Size(339, 56);
-            this.gbOtherOverview.TabIndex = 34;
-            this.gbOtherOverview.TabStop = false;
-            this.gbOtherOverview.Text = "Other";
-            // 
-            // tbOtherTotalCost
-            // 
-            this.tbOtherTotalCost.baseText = "0";
-            this.tbOtherTotalCost.currencyValue = new decimal(new int[] {
+            this.plOtherTotalCost.baseText = null;
+            this.plOtherTotalCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plOtherTotalCost.Location = new System.Drawing.Point(158, 19);
+            this.plOtherTotalCost.Name = "plOtherTotalCost";
+            this.plOtherTotalCost.resultText = null;
+            this.plOtherTotalCost.Size = new System.Drawing.Size(75, 20);
+            this.plOtherTotalCost.TabIndex = 42;
+            this.plOtherTotalCost.Text = "$0.00";
+            this.plOtherTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plOtherTotalCost.value = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.tbOtherTotalCost.Location = new System.Drawing.Point(152, 19);
-            this.tbOtherTotalCost.Name = "tbOtherTotalCost";
-            this.tbOtherTotalCost.resultText = "$0.00";
-            this.tbOtherTotalCost.Size = new System.Drawing.Size(75, 20);
-            this.tbOtherTotalCost.TabIndex = 34;
-            this.tbOtherTotalCost.Text = "$0.00";
             // 
-            // lOtherTotalCost
+            // plLaborCostPerSquare
             // 
-            this.lOtherTotalCost.AutoSize = true;
-            this.lOtherTotalCost.Location = new System.Drawing.Point(97, 23);
-            this.lOtherTotalCost.Name = "lOtherTotalCost";
-            this.lOtherTotalCost.Size = new System.Drawing.Size(55, 13);
-            this.lOtherTotalCost.TabIndex = 33;
-            this.lOtherTotalCost.Text = "Total Cost";
+            this.plLaborCostPerSquare.baseText = null;
+            this.plLaborCostPerSquare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plLaborCostPerSquare.Location = new System.Drawing.Point(233, 75);
+            this.plLaborCostPerSquare.Name = "plLaborCostPerSquare";
+            this.plLaborCostPerSquare.resultText = null;
+            this.plLaborCostPerSquare.Size = new System.Drawing.Size(75, 20);
+            this.plLaborCostPerSquare.TabIndex = 41;
+            this.plLaborCostPerSquare.Text = "$0.00";
+            this.plLaborCostPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plLaborCostPerSquare.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
-            // gbLaborOverview
+            // plLaborTotal
             // 
-            this.gbLaborOverview.Controls.Add(this.tbLaborBurden);
-            this.gbLaborOverview.Controls.Add(this.tbLaborCostPerSquare);
-            this.gbLaborOverview.Controls.Add(this.lLaborCostPerSquare);
-            this.gbLaborOverview.Controls.Add(this.tbLaborTotalCost);
-            this.gbLaborOverview.Controls.Add(this.lLaborTotalCost);
-            this.gbLaborOverview.Controls.Add(this.lLaborBurden);
-            this.gbLaborOverview.Controls.Add(this.tbLaborSubtotal);
-            this.gbLaborOverview.Controls.Add(this.lLaborSubtotal);
-            this.gbLaborOverview.Location = new System.Drawing.Point(3, 204);
-            this.gbLaborOverview.Name = "gbLaborOverview";
-            this.gbLaborOverview.Size = new System.Drawing.Size(339, 131);
-            this.gbLaborOverview.TabIndex = 33;
-            this.gbLaborOverview.TabStop = false;
-            this.gbLaborOverview.Text = "Labor";
+            this.plLaborTotal.baseText = null;
+            this.plLaborTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plLaborTotal.Location = new System.Drawing.Point(233, 39);
+            this.plLaborTotal.Name = "plLaborTotal";
+            this.plLaborTotal.resultText = null;
+            this.plLaborTotal.Size = new System.Drawing.Size(75, 20);
+            this.plLaborTotal.TabIndex = 40;
+            this.plLaborTotal.Text = "$0.00";
+            this.plLaborTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plLaborTotal.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plLaborSubtotal
+            // 
+            this.plLaborSubtotal.baseText = null;
+            this.plLaborSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plLaborSubtotal.Location = new System.Drawing.Point(78, 39);
+            this.plLaborSubtotal.Name = "plLaborSubtotal";
+            this.plLaborSubtotal.resultText = null;
+            this.plLaborSubtotal.Size = new System.Drawing.Size(75, 20);
+            this.plLaborSubtotal.TabIndex = 39;
+            this.plLaborSubtotal.Text = "$0.00";
+            this.plLaborSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plLaborSubtotal.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // tbLaborBurden
             // 
@@ -875,107 +1147,6 @@ namespace Estimator
             this.tbLaborBurden.Size = new System.Drawing.Size(75, 20);
             this.tbLaborBurden.TabIndex = 35;
             this.tbLaborBurden.Text = "0.00 %";
-            // 
-            // tbLaborCostPerSquare
-            // 
-            this.tbLaborCostPerSquare.baseText = "0";
-            this.tbLaborCostPerSquare.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbLaborCostPerSquare.Location = new System.Drawing.Point(235, 75);
-            this.tbLaborCostPerSquare.Name = "tbLaborCostPerSquare";
-            this.tbLaborCostPerSquare.resultText = "$0.00";
-            this.tbLaborCostPerSquare.Size = new System.Drawing.Size(75, 20);
-            this.tbLaborCostPerSquare.TabIndex = 32;
-            this.tbLaborCostPerSquare.Text = "$0.00";
-            // 
-            // lLaborCostPerSquare
-            // 
-            this.lLaborCostPerSquare.AutoSize = true;
-            this.lLaborCostPerSquare.Location = new System.Drawing.Point(180, 79);
-            this.lLaborCostPerSquare.Name = "lLaborCostPerSquare";
-            this.lLaborCostPerSquare.Size = new System.Drawing.Size(49, 13);
-            this.lLaborCostPerSquare.TabIndex = 31;
-            this.lLaborCostPerSquare.Text = "Cost/Sq.";
-            // 
-            // tbLaborTotalCost
-            // 
-            this.tbLaborTotalCost.baseText = "0";
-            this.tbLaborTotalCost.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbLaborTotalCost.Location = new System.Drawing.Point(235, 38);
-            this.tbLaborTotalCost.Name = "tbLaborTotalCost";
-            this.tbLaborTotalCost.resultText = "$0.00";
-            this.tbLaborTotalCost.Size = new System.Drawing.Size(75, 20);
-            this.tbLaborTotalCost.TabIndex = 30;
-            this.tbLaborTotalCost.Text = "$0.00";
-            // 
-            // lLaborTotalCost
-            // 
-            this.lLaborTotalCost.AutoSize = true;
-            this.lLaborTotalCost.Location = new System.Drawing.Point(180, 42);
-            this.lLaborTotalCost.Name = "lLaborTotalCost";
-            this.lLaborTotalCost.Size = new System.Drawing.Size(55, 13);
-            this.lLaborTotalCost.TabIndex = 29;
-            this.lLaborTotalCost.Text = "Total Cost";
-            // 
-            // lLaborBurden
-            // 
-            this.lLaborBurden.AutoSize = true;
-            this.lLaborBurden.Location = new System.Drawing.Point(23, 78);
-            this.lLaborBurden.Name = "lLaborBurden";
-            this.lLaborBurden.Size = new System.Drawing.Size(41, 13);
-            this.lLaborBurden.TabIndex = 25;
-            this.lLaborBurden.Text = "Burden";
-            this.lLaborBurden.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tbLaborSubtotal
-            // 
-            this.tbLaborSubtotal.baseText = "0";
-            this.tbLaborSubtotal.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbLaborSubtotal.Location = new System.Drawing.Point(78, 39);
-            this.tbLaborSubtotal.Name = "tbLaborSubtotal";
-            this.tbLaborSubtotal.resultText = "$0.00";
-            this.tbLaborSubtotal.Size = new System.Drawing.Size(75, 20);
-            this.tbLaborSubtotal.TabIndex = 24;
-            this.tbLaborSubtotal.Text = "$0.00";
-            // 
-            // lLaborSubtotal
-            // 
-            this.lLaborSubtotal.AutoSize = true;
-            this.lLaborSubtotal.Location = new System.Drawing.Point(23, 43);
-            this.lLaborSubtotal.Name = "lLaborSubtotal";
-            this.lLaborSubtotal.Size = new System.Drawing.Size(46, 13);
-            this.lLaborSubtotal.TabIndex = 0;
-            this.lLaborSubtotal.Text = "Subtotal";
-            // 
-            // gbMatOverview
-            // 
-            this.gbMatOverview.Controls.Add(this.plMatCostPerSquare);
-            this.gbMatOverview.Controls.Add(this.plMatTotalCost);
-            this.gbMatOverview.Controls.Add(this.plMatSubtotal);
-            this.gbMatOverview.Controls.Add(this.tbSalesTax);
-            this.gbMatOverview.Controls.Add(this.tbWaste);
-            this.gbMatOverview.Controls.Add(this.lMatCostPerSquare);
-            this.gbMatOverview.Controls.Add(this.lTotalMatCost);
-            this.gbMatOverview.Controls.Add(this.lMatTax);
-            this.gbMatOverview.Controls.Add(this.lWaste);
-            this.gbMatOverview.Controls.Add(this.lMatSubtotal);
-            this.gbMatOverview.Location = new System.Drawing.Point(3, 67);
-            this.gbMatOverview.Name = "gbMatOverview";
-            this.gbMatOverview.Size = new System.Drawing.Size(339, 131);
-            this.gbMatOverview.TabIndex = 3;
-            this.gbMatOverview.TabStop = false;
-            this.gbMatOverview.Text = "Materials";
             // 
             // plMatCostPerSquare
             // 
@@ -1058,69 +1229,12 @@ namespace Estimator
             this.tbWaste.TabIndex = 34;
             this.tbWaste.Text = "0.00 %";
             // 
-            // lMatCostPerSquare
-            // 
-            this.lMatCostPerSquare.AutoSize = true;
-            this.lMatCostPerSquare.Location = new System.Drawing.Point(178, 82);
-            this.lMatCostPerSquare.Name = "lMatCostPerSquare";
-            this.lMatCostPerSquare.Size = new System.Drawing.Size(49, 13);
-            this.lMatCostPerSquare.TabIndex = 31;
-            this.lMatCostPerSquare.Text = "Cost/Sq.";
-            // 
-            // lTotalMatCost
-            // 
-            this.lTotalMatCost.AutoSize = true;
-            this.lTotalMatCost.Location = new System.Drawing.Point(178, 45);
-            this.lTotalMatCost.Name = "lTotalMatCost";
-            this.lTotalMatCost.Size = new System.Drawing.Size(55, 13);
-            this.lTotalMatCost.TabIndex = 29;
-            this.lTotalMatCost.Text = "Total Cost";
-            // 
-            // lMatTax
-            // 
-            this.lMatTax.AutoSize = true;
-            this.lMatTax.Location = new System.Drawing.Point(10, 99);
-            this.lMatTax.Name = "lMatTax";
-            this.lMatTax.Size = new System.Drawing.Size(54, 13);
-            this.lMatTax.TabIndex = 27;
-            this.lMatTax.Text = "Sales Tax";
-            this.lMatTax.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lWaste
-            // 
-            this.lWaste.AutoSize = true;
-            this.lWaste.Location = new System.Drawing.Point(11, 62);
-            this.lWaste.Name = "lWaste";
-            this.lWaste.Size = new System.Drawing.Size(38, 13);
-            this.lWaste.TabIndex = 25;
-            this.lWaste.Text = "Waste";
-            // 
-            // lMatSubtotal
-            // 
-            this.lMatSubtotal.AutoSize = true;
-            this.lMatSubtotal.Location = new System.Drawing.Point(10, 27);
-            this.lMatSubtotal.Name = "lMatSubtotal";
-            this.lMatSubtotal.Size = new System.Drawing.Size(46, 13);
-            this.lMatSubtotal.TabIndex = 0;
-            this.lMatSubtotal.Text = "Subtotal";
-            // 
-            // tabMats
-            // 
-            this.tabMats.Controls.Add(this.gridViewMats);
-            this.tabMats.Location = new System.Drawing.Point(4, 22);
-            this.tabMats.Name = "tabMats";
-            this.tabMats.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMats.Size = new System.Drawing.Size(681, 400);
-            this.tabMats.TabIndex = 0;
-            this.tabMats.Text = "Materials";
-            this.tabMats.UseVisualStyleBackColor = true;
-            // 
             // gridViewMats
             // 
             this.gridViewMats.AllowUserToAddRows = false;
             this.gridViewMats.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray;
-            this.gridViewMats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.gridViewMats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridViewMats.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridViewMats.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridViewMats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1183,39 +1297,6 @@ namespace Estimator
             this.dataGridViewTextBoxColumn6.HeaderText = "Total";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // tabTrim
-            // 
-            this.tabTrim.Controls.Add(this.lTotalFlatSheetsValue);
-            this.tabTrim.Controls.Add(this.lTotalFlatSheets);
-            this.tabTrim.Controls.Add(this.tbTrimPrice);
-            this.tabTrim.Controls.Add(this.lTrimPrice);
-            this.tabTrim.Controls.Add(this.trimGridView);
-            this.tabTrim.Location = new System.Drawing.Point(4, 22);
-            this.tabTrim.Name = "tabTrim";
-            this.tabTrim.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTrim.Size = new System.Drawing.Size(681, 400);
-            this.tabTrim.TabIndex = 1;
-            this.tabTrim.Text = "Trim";
-            this.tabTrim.UseVisualStyleBackColor = true;
-            // 
-            // lTotalFlatSheetsValue
-            // 
-            this.lTotalFlatSheetsValue.AutoSize = true;
-            this.lTotalFlatSheetsValue.Location = new System.Drawing.Point(311, 19);
-            this.lTotalFlatSheetsValue.Name = "lTotalFlatSheetsValue";
-            this.lTotalFlatSheetsValue.Size = new System.Drawing.Size(13, 13);
-            this.lTotalFlatSheetsValue.TabIndex = 4;
-            this.lTotalFlatSheetsValue.Text = "0";
-            // 
-            // lTotalFlatSheets
-            // 
-            this.lTotalFlatSheets.AutoSize = true;
-            this.lTotalFlatSheets.Location = new System.Drawing.Point(218, 19);
-            this.lTotalFlatSheets.Name = "lTotalFlatSheets";
-            this.lTotalFlatSheets.Size = new System.Drawing.Size(90, 13);
-            this.lTotalFlatSheets.TabIndex = 3;
-            this.lTotalFlatSheets.Text = "Total Flat Sheets:";
-            // 
             // tbTrimPrice
             // 
             this.tbTrimPrice.baseText = "0";
@@ -1231,21 +1312,12 @@ namespace Estimator
             this.tbTrimPrice.TabIndex = 2;
             this.tbTrimPrice.Text = "$0.00";
             // 
-            // lTrimPrice
-            // 
-            this.lTrimPrice.AutoSize = true;
-            this.lTrimPrice.Location = new System.Drawing.Point(6, 19);
-            this.lTrimPrice.Name = "lTrimPrice";
-            this.lTrimPrice.Size = new System.Drawing.Size(54, 13);
-            this.lTrimPrice.TabIndex = 1;
-            this.lTrimPrice.Text = "Trim Price";
-            // 
             // trimGridView
             // 
             this.trimGridView.AllowUserToAddRows = false;
             this.trimGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGray;
-            this.trimGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.trimGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.trimGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.trimGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.trimGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1308,47 +1380,127 @@ namespace Estimator
             this.dataGridViewTextBoxColumn12.HeaderText = "Total";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // tabLabor
+            // laborGridView
             // 
-            this.tabLabor.Location = new System.Drawing.Point(4, 22);
-            this.tabLabor.Name = "tabLabor";
-            this.tabLabor.Size = new System.Drawing.Size(681, 400);
-            this.tabLabor.TabIndex = 2;
-            this.tabLabor.Text = "Labor";
-            this.tabLabor.UseVisualStyleBackColor = true;
+            this.laborGridView.AllowUserToAddRows = false;
+            this.laborGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            this.laborGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.laborGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.laborGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.laborGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.laborGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lColLaborItem,
+            this.lColDescription,
+            this.lColQNTY,
+            this.lColUnit,
+            this.lColUnitPrice,
+            this.lColTotal});
+            this.laborGridView.Location = new System.Drawing.Point(4, 4);
+            this.laborGridView.Name = "laborGridView";
+            this.laborGridView.RowHeadersVisible = false;
+            this.laborGridView.Size = new System.Drawing.Size(674, 393);
+            this.laborGridView.soffitPanelSquares = 0;
+            this.laborGridView.standingSeamSquares = 0;
+            this.laborGridView.TabIndex = 0;
+            this.laborGridView.totalSquares = 0;
+            this.laborGridView.wallPanelSquares = 0;
             // 
-            // tabOther
+            // lColLaborItem
             // 
-            this.tabOther.Location = new System.Drawing.Point(4, 22);
-            this.tabOther.Name = "tabOther";
-            this.tabOther.Size = new System.Drawing.Size(681, 400);
-            this.tabOther.TabIndex = 3;
-            this.tabOther.Text = "Other";
-            this.tabOther.UseVisualStyleBackColor = true;
+            this.lColLaborItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.lColLaborItem.HeaderText = "Labor Item";
+            this.lColLaborItem.Name = "lColLaborItem";
+            this.lColLaborItem.Width = 145;
             // 
-            // mColMaterial
+            // lColDescription
             // 
-            this.mColMaterial.Name = "mColMaterial";
+            this.lColDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.lColDescription.HeaderText = "Description";
+            this.lColDescription.Name = "lColDescription";
+            this.lColDescription.Width = 145;
             // 
-            // mColDescription
+            // lColQNTY
             // 
-            this.mColDescription.Name = "mColDescription";
+            this.lColQNTY.HeaderText = "QNTY";
+            this.lColQNTY.Name = "lColQNTY";
             // 
-            // mColQNTY
+            // lColUnit
             // 
-            this.mColQNTY.Name = "mColQNTY";
+            this.lColUnit.HeaderText = "Unit";
+            this.lColUnit.Name = "lColUnit";
             // 
-            // mColUnit
+            // lColUnitPrice
             // 
-            this.mColUnit.Name = "mColUnit";
+            this.lColUnitPrice.HeaderText = "Unit Price";
+            this.lColUnitPrice.Name = "lColUnitPrice";
             // 
-            // mColUnitPrice
+            // lColTotal
             // 
-            this.mColUnitPrice.Name = "mColUnitPrice";
+            this.lColTotal.HeaderText = "Total";
+            this.lColTotal.Name = "lColTotal";
             // 
-            // mColTotal
+            // otherGridView
             // 
-            this.mColTotal.Name = "mColTotal";
+            this.otherGridView.AllowUserToAddRows = false;
+            this.otherGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
+            this.otherGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.otherGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.otherGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.otherGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.otherGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oColItem,
+            this.oColDescription,
+            this.oColQNTY,
+            this.oColUnit,
+            this.oColUnitPrice,
+            this.oColTotal});
+            this.otherGridView.Location = new System.Drawing.Point(4, 4);
+            this.otherGridView.Name = "otherGridView";
+            this.otherGridView.RowHeadersVisible = false;
+            this.otherGridView.Size = new System.Drawing.Size(674, 393);
+            this.otherGridView.soffitPanelSquares = 0;
+            this.otherGridView.standingSeamSquares = 0;
+            this.otherGridView.TabIndex = 0;
+            this.otherGridView.totalSquares = 0;
+            this.otherGridView.wallPanelSquares = 0;
+            // 
+            // oColItem
+            // 
+            this.oColItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.oColItem.HeaderText = "Item";
+            this.oColItem.Name = "oColItem";
+            this.oColItem.Width = 145;
+            // 
+            // oColDescription
+            // 
+            this.oColDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.oColDescription.HeaderText = "Description";
+            this.oColDescription.Name = "oColDescription";
+            this.oColDescription.Width = 145;
+            // 
+            // oColQNTY
+            // 
+            this.oColQNTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.oColQNTY.HeaderText = "QNTY";
+            this.oColQNTY.Name = "oColQNTY";
+            this.oColQNTY.Width = 55;
+            // 
+            // oColUnit
+            // 
+            this.oColUnit.HeaderText = "Unit";
+            this.oColUnit.Name = "oColUnit";
+            // 
+            // oColUnitPrice
+            // 
+            this.oColUnitPrice.HeaderText = "Unit Price";
+            this.oColUnitPrice.Name = "oColUnitPrice";
+            // 
+            // oColTotal
+            // 
+            this.oColTotal.HeaderText = "Total";
+            this.oColTotal.Name = "oColTotal";
             // 
             // MainForm
             // 
@@ -1381,10 +1533,14 @@ namespace Estimator
             this.gbMatOverview.ResumeLayout(false);
             this.gbMatOverview.PerformLayout();
             this.tabMats.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).EndInit();
             this.tabTrim.ResumeLayout(false);
             this.tabTrim.PerformLayout();
+            this.tabLabor.ResumeLayout(false);
+            this.tabOther.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trimGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laborGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.otherGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1454,10 +1610,6 @@ namespace Estimator
         private System.Windows.Forms.Label lOverhead;
         private System.Windows.Forms.Label lSummarySubtotalBid;
         private System.Windows.Forms.Label lTotalBid;
-        private CurrencyTextBox tbLaborCostPerSquare;
-        private CurrencyTextBox tbLaborTotalCost;
-        private CurrencyTextBox tbLaborSubtotal;
-        private CurrencyTextBox tbOtherTotalCost;
         private CurrencyTextBox tbMetalRoofLabor;
         private CurrencyTextBox tbMetalRoofMaterial;
         private CurrencyTextBox tbSummaryOtherPerSquare;
@@ -1471,7 +1623,6 @@ namespace Estimator
         private CurrencyTextBox tbTotalBidPerSquare;
         private CurrencyTextBox tbTotalBid;
         private PercentageTextBox tbOverhead;
-        private PercentageTextBox tbLaborBurden;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColQNTY;
@@ -1505,6 +1656,25 @@ namespace Estimator
         public MaterialGridView trimGridView;
         public CurrencyTextBox tbTrimPrice;
         public System.Windows.Forms.Label lTotalFlatSheetsValue;
+        public MaterialGridView laborGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lColLaborItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lColDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lColQNTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lColUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lColUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lColTotal;
+        public PercentageTextBox tbLaborBurden;
+        public PriceLabel plLaborSubtotal;
+        public PriceLabel plLaborCostPerSquare;
+        public PriceLabel plLaborTotal;
+        public PriceLabel plOtherTotalCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oColItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oColDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oColQNTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oColUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oColUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oColTotal;
+        public MaterialGridView otherGridView;
     }
 }
 
