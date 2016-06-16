@@ -30,8 +30,8 @@ namespace Estimator
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mfWindowStrip = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
             this.miLoadEstimate = new System.Windows.Forms.ToolStripMenuItem();
@@ -1119,8 +1119,8 @@ namespace Estimator
             // 
             this.gridViewMats.AllowUserToAddRows = false;
             this.gridViewMats.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.gridViewMats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray;
+            this.gridViewMats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.gridViewMats.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridViewMats.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridViewMats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1244,8 +1244,8 @@ namespace Estimator
             // 
             this.trimGridView.AllowUserToAddRows = false;
             this.trimGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.trimGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGray;
+            this.trimGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.trimGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.trimGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.trimGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1478,11 +1478,8 @@ namespace Estimator
         private System.Windows.Forms.DataGridViewTextBoxColumn mColUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColUnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColTotal;
-        private MaterialGridView trimGridView;
         private System.Windows.Forms.Label lTrimPrice;
-        private CurrencyTextBox tbTrimPrice;
         private System.Windows.Forms.Label lTotalFlatSheets;
-        private System.Windows.Forms.Label lTotalFlatSheetsValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1505,6 +1502,9 @@ namespace Estimator
         public PriceLabel plMatTotalCost;
         public PriceLabel plMatCostPerSquare;
         public MaterialGridView gridViewMats;
+        public MaterialGridView trimGridView;
+        public CurrencyTextBox tbTrimPrice;
+        public System.Windows.Forms.Label lTotalFlatSheetsValue;
     }
 }
 

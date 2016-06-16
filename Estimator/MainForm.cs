@@ -19,6 +19,7 @@ namespace Estimator
             addGridRows();
             InitializeTextBoxListeners();
             Calculator.PerformCalculations(this);
+            SetupGrids();
         }
 
         private void InitializeTextBoxListeners()
@@ -39,7 +40,26 @@ namespace Estimator
             tbSalesTax.Validated += new EventHandler(TB_Validated);
 
             gridViewMats.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
+            trimGridView.CellBeginEdit += new DataGridViewCellCancelEventHandler(TB_Validated);
 
+            
+
+        }
+
+        private void SetupGrids()
+        {
+            foreach (DataGridViewColumn column in gridViewMats.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            foreach (DataGridViewColumn column in trimGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            tbTrimPrice.Text = "$0.96";
+            tbTrimPrice.baseText = "0.96";
         }
 
         private void nud_MouseDown(NumericUpDown nud, object sender, MouseEventArgs e)

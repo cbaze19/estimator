@@ -33,6 +33,7 @@ namespace Estimator
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;
             this.BorderStyle = BorderStyle.None;
+            this.AllowUserToOrderColumns = false;
 
             this.DataError += new DataGridViewDataErrorEventHandler(DataGrid_Error);
             this.CellFormatting += new DataGridViewCellFormattingEventHandler(DataGrid_CellFormatting);

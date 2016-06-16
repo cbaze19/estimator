@@ -28,7 +28,7 @@ namespace Estimator
 
             //form.gridViewMats.PerformCalculations();
             DataGridViewCell panelQNTY = form.gridViewMats.Rows[0].Cells[2];
-            panelQNTY.Value = totalSquares;
+            panelQNTY.Value = standingSeamSquares;
 
             DataGridViewCell contClip = form.gridViewMats.Rows[1].Cells[2];
             DataGridViewCell zeeRib = form.gridViewMats.Rows[2].Cells[2];
@@ -59,13 +59,26 @@ namespace Estimator
             DataGridViewCell paintCell = form.gridViewMats.Rows[15].Cells[2];
             paintCell.Value = (decimal)totalSquares / 100;
 
+
+            decimal[] sos = { 0.5m, 0.75m, 0.75m, 1.75m, 1.25m, 1.25m, 1.25m, 1.75m, 1.5m, 1.4m, 4m };
+
+            decimal soinftsum = 0m;
+            foreach (DataGridViewRow row in form.trimGridView.Rows)
+            {
+                row.Cells[4].Value = sos[row.Index] * decimal.Parse(form.tbTrimPrice.baseText);
+                row.Cells[5].Value = decimal.Parse(row.Cells[4].Value.ToString()) * decimal.Parse(row.Cells[2].Value.ToString());
+                soinftsum = soinftsum + sos[row.Index] * decimal.Parse(row.Cells[2].Value.ToString());
+            }
+
+            form.lTotalFlatSheetsValue.Text = ((int)Math.Ceiling(soinftsum / 35)).ToString();
+
             foreach (DataGridViewRow r in form.gridViewMats.Rows)
             {
                 r.Cells[5].Value = decimal.Parse(r.Cells[2].Value.ToString()) * decimal.Parse(r.Cells[4].Value.ToString());
             }
 
 
-            form.plMatSubtotal.setText(GetColumnSum(form.gridViewMats, 5).ToString());
+            form.plMatSubtotal.setText((GetColumnSum(form.gridViewMats, 5) + GetColumnSum(form.trimGridView, 5)).ToString());
             form.plMatTotalCost.setText((form.plMatSubtotal.value * (1 + form.tbWaste.percentageValue) * (1 + form.tbSalesTax.percentageValue)).ToString());
 
             if (decimal.Parse(form.tbTotalSquares.Text) != 0)
