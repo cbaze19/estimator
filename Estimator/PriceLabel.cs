@@ -28,6 +28,7 @@ namespace Estimator
         {
             this.BorderStyle = BorderStyle.FixedSingle;
             this.TextAlign = ContentAlignment.MiddleLeft;
+            baseText = "0.00";
         }
 
         public void setText(string t)

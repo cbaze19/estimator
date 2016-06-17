@@ -115,6 +115,27 @@ namespace Estimator
                 form.plMatCostPerSquare.setText((form.plMatTotalCost.value / decimal.Parse(form.tbTotalSquares.Text)).ToString());
                 form.plLaborCostPerSquare.setText((form.plLaborTotal.value / decimal.Parse(form.tbTotalSquares.Text)).ToString());
             }
+
+            form.plSummaryMaterial.setText(form.plMatTotalCost.value.ToString());
+            form.plSummaryMatPerSquare.setText(form.plMatCostPerSquare.value.ToString());
+
+            form.plSummaryLabor.setText(form.plLaborTotal.value.ToString());
+            form.plSummaryLaborPerSquare.setText(form.plLaborCostPerSquare.value.ToString());
+
+            form.plSummaryOther.setText(form.plOtherTotalCost.value.ToString());
+
+            if (decimal.Parse(form.tbTotalSquares.Text) != 0)
+                form.plSummaryOtherPerSquare.setText((form.plSummaryOther.value / (decimal)totalSquares).ToString());
+
+            form.plSummarySubtotal.setText((form.plSummaryMaterial.value + form.plSummaryLabor.value + form.plSummaryOther.value).ToString());
+
+            if (totalSquares != 0)
+                form.plSummarySubtotalPerSquare.setText((form.plSummarySubtotal.value / (decimal)totalSquares).ToString());
+
+            form.plSummaryTotal.setText((form.plSummarySubtotal.value * (1 + form.tbOverhead.percentageValue) + (form.tbMiscAddOn1.currencyValue) + (form.tbMiscAddOn2.currencyValue)).ToString());
+
+            if (totalSquares != 0)
+                form.plSummaryTotalPerSquare.setText((form.plSummaryTotal.value / (decimal)totalSquares).ToString());
         }
 
         static public decimal GetColumnSum(DataGridView dgv, int colIndex)

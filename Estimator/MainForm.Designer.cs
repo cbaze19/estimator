@@ -105,19 +105,19 @@ namespace Estimator
             this.mColUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plSummaryTotalPerSquare = new Estimator.PriceLabel();
+            this.plSummaryTotal = new Estimator.PriceLabel();
+            this.plSummarySubtotalPerSquare = new Estimator.PriceLabel();
+            this.plSummarySubtotal = new Estimator.PriceLabel();
+            this.plSummaryOtherPerSquare = new Estimator.PriceLabel();
+            this.plSummaryOther = new Estimator.PriceLabel();
+            this.plSummaryLaborPerSquare = new Estimator.PriceLabel();
+            this.plSummaryLabor = new Estimator.PriceLabel();
+            this.plSummaryMatPerSquare = new Estimator.PriceLabel();
+            this.plSummaryMaterial = new Estimator.PriceLabel();
             this.tbOverhead = new Estimator.PercentageTextBox();
-            this.tbTotalBidPerSquare = new Estimator.CurrencyTextBox();
-            this.tbTotalBid = new Estimator.CurrencyTextBox();
             this.tbMiscAddOn2 = new Estimator.CurrencyTextBox();
             this.tbMiscAddOn1 = new Estimator.CurrencyTextBox();
-            this.tbSummarySubtotalBidPerSquare = new Estimator.CurrencyTextBox();
-            this.tbSummarySubtotalBid = new Estimator.CurrencyTextBox();
-            this.tbSummaryOtherPerSquare = new Estimator.CurrencyTextBox();
-            this.tbSummaryLaborPerSquare = new Estimator.CurrencyTextBox();
-            this.tbSummaryMatPerSquare = new Estimator.CurrencyTextBox();
-            this.tbOtherCosts = new Estimator.CurrencyTextBox();
-            this.tbMetalRoofLabor = new Estimator.CurrencyTextBox();
-            this.tbMetalRoofMaterial = new Estimator.CurrencyTextBox();
             this.plOtherTotalCost = new Estimator.PriceLabel();
             this.plLaborCostPerSquare = new Estimator.PriceLabel();
             this.plLaborTotal = new Estimator.PriceLabel();
@@ -513,28 +513,28 @@ namespace Estimator
             // 
             // gbSummary
             // 
+            this.gbSummary.Controls.Add(this.plSummaryTotalPerSquare);
+            this.gbSummary.Controls.Add(this.plSummaryTotal);
+            this.gbSummary.Controls.Add(this.plSummarySubtotalPerSquare);
+            this.gbSummary.Controls.Add(this.plSummarySubtotal);
+            this.gbSummary.Controls.Add(this.plSummaryOtherPerSquare);
+            this.gbSummary.Controls.Add(this.plSummaryOther);
+            this.gbSummary.Controls.Add(this.plSummaryLaborPerSquare);
+            this.gbSummary.Controls.Add(this.plSummaryLabor);
+            this.gbSummary.Controls.Add(this.plSummaryMatPerSquare);
+            this.gbSummary.Controls.Add(this.plSummaryMaterial);
             this.gbSummary.Controls.Add(this.tbOverhead);
-            this.gbSummary.Controls.Add(this.tbTotalBidPerSquare);
-            this.gbSummary.Controls.Add(this.tbTotalBid);
             this.gbSummary.Controls.Add(this.lTotalBid);
             this.gbSummary.Controls.Add(this.tbMiscAddOn2);
             this.gbSummary.Controls.Add(this.lMiscAddOn2);
             this.gbSummary.Controls.Add(this.tbMiscAddOn1);
             this.gbSummary.Controls.Add(this.lMiscAddOn1);
             this.gbSummary.Controls.Add(this.lOverhead);
-            this.gbSummary.Controls.Add(this.tbSummarySubtotalBidPerSquare);
-            this.gbSummary.Controls.Add(this.tbSummarySubtotalBid);
             this.gbSummary.Controls.Add(this.lSummarySubtotalBid);
-            this.gbSummary.Controls.Add(this.tbSummaryOtherPerSquare);
-            this.gbSummary.Controls.Add(this.tbSummaryLaborPerSquare);
-            this.gbSummary.Controls.Add(this.tbSummaryMatPerSquare);
             this.gbSummary.Controls.Add(this.lSummaryPerSquare);
             this.gbSummary.Controls.Add(this.lSummaryTotals);
-            this.gbSummary.Controls.Add(this.tbOtherCosts);
             this.gbSummary.Controls.Add(this.lOtherCosts);
-            this.gbSummary.Controls.Add(this.tbMetalRoofLabor);
             this.gbSummary.Controls.Add(this.lMetalRoofLabor);
-            this.gbSummary.Controls.Add(this.tbMetalRoofMaterial);
             this.gbSummary.Controls.Add(this.lMetalRoofMaterial);
             this.gbSummary.Location = new System.Drawing.Point(349, 68);
             this.gbSummary.Name = "gbSummary";
@@ -870,6 +870,176 @@ namespace Estimator
             // 
             this.mColTotal.Name = "mColTotal";
             // 
+            // plSummaryTotalPerSquare
+            // 
+            this.plSummaryTotalPerSquare.baseText = null;
+            this.plSummaryTotalPerSquare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryTotalPerSquare.Location = new System.Drawing.Point(220, 273);
+            this.plSummaryTotalPerSquare.Name = "plSummaryTotalPerSquare";
+            this.plSummaryTotalPerSquare.resultText = null;
+            this.plSummaryTotalPerSquare.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryTotalPerSquare.TabIndex = 56;
+            this.plSummaryTotalPerSquare.Text = "$0.00";
+            this.plSummaryTotalPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryTotalPerSquare.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummaryTotal
+            // 
+            this.plSummaryTotal.baseText = null;
+            this.plSummaryTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryTotal.Location = new System.Drawing.Point(112, 272);
+            this.plSummaryTotal.Name = "plSummaryTotal";
+            this.plSummaryTotal.resultText = null;
+            this.plSummaryTotal.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryTotal.TabIndex = 55;
+            this.plSummaryTotal.Text = "$0.00";
+            this.plSummaryTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryTotal.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummarySubtotalPerSquare
+            // 
+            this.plSummarySubtotalPerSquare.baseText = null;
+            this.plSummarySubtotalPerSquare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummarySubtotalPerSquare.Location = new System.Drawing.Point(220, 138);
+            this.plSummarySubtotalPerSquare.Name = "plSummarySubtotalPerSquare";
+            this.plSummarySubtotalPerSquare.resultText = null;
+            this.plSummarySubtotalPerSquare.Size = new System.Drawing.Size(79, 20);
+            this.plSummarySubtotalPerSquare.TabIndex = 54;
+            this.plSummarySubtotalPerSquare.Text = "$0.00";
+            this.plSummarySubtotalPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummarySubtotalPerSquare.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummarySubtotal
+            // 
+            this.plSummarySubtotal.baseText = null;
+            this.plSummarySubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummarySubtotal.Location = new System.Drawing.Point(112, 138);
+            this.plSummarySubtotal.Name = "plSummarySubtotal";
+            this.plSummarySubtotal.resultText = null;
+            this.plSummarySubtotal.Size = new System.Drawing.Size(79, 20);
+            this.plSummarySubtotal.TabIndex = 53;
+            this.plSummarySubtotal.Text = "$0.00";
+            this.plSummarySubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummarySubtotal.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummaryOtherPerSquare
+            // 
+            this.plSummaryOtherPerSquare.baseText = null;
+            this.plSummaryOtherPerSquare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryOtherPerSquare.Location = new System.Drawing.Point(220, 98);
+            this.plSummaryOtherPerSquare.Name = "plSummaryOtherPerSquare";
+            this.plSummaryOtherPerSquare.resultText = null;
+            this.plSummaryOtherPerSquare.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryOtherPerSquare.TabIndex = 52;
+            this.plSummaryOtherPerSquare.Text = "$0.00";
+            this.plSummaryOtherPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryOtherPerSquare.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummaryOther
+            // 
+            this.plSummaryOther.baseText = null;
+            this.plSummaryOther.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryOther.Location = new System.Drawing.Point(112, 97);
+            this.plSummaryOther.Name = "plSummaryOther";
+            this.plSummaryOther.resultText = null;
+            this.plSummaryOther.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryOther.TabIndex = 51;
+            this.plSummaryOther.Text = "$0.00";
+            this.plSummaryOther.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryOther.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummaryLaborPerSquare
+            // 
+            this.plSummaryLaborPerSquare.baseText = null;
+            this.plSummaryLaborPerSquare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryLaborPerSquare.Location = new System.Drawing.Point(220, 69);
+            this.plSummaryLaborPerSquare.Name = "plSummaryLaborPerSquare";
+            this.plSummaryLaborPerSquare.resultText = null;
+            this.plSummaryLaborPerSquare.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryLaborPerSquare.TabIndex = 50;
+            this.plSummaryLaborPerSquare.Text = "$0.00";
+            this.plSummaryLaborPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryLaborPerSquare.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummaryLabor
+            // 
+            this.plSummaryLabor.baseText = null;
+            this.plSummaryLabor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryLabor.Location = new System.Drawing.Point(112, 69);
+            this.plSummaryLabor.Name = "plSummaryLabor";
+            this.plSummaryLabor.resultText = null;
+            this.plSummaryLabor.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryLabor.TabIndex = 49;
+            this.plSummaryLabor.Text = "$0.00";
+            this.plSummaryLabor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryLabor.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummaryMatPerSquare
+            // 
+            this.plSummaryMatPerSquare.baseText = null;
+            this.plSummaryMatPerSquare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryMatPerSquare.Location = new System.Drawing.Point(220, 40);
+            this.plSummaryMatPerSquare.Name = "plSummaryMatPerSquare";
+            this.plSummaryMatPerSquare.resultText = null;
+            this.plSummaryMatPerSquare.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryMatPerSquare.TabIndex = 48;
+            this.plSummaryMatPerSquare.Text = "$0.00";
+            this.plSummaryMatPerSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryMatPerSquare.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
+            // plSummaryMaterial
+            // 
+            this.plSummaryMaterial.baseText = null;
+            this.plSummaryMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plSummaryMaterial.Location = new System.Drawing.Point(112, 40);
+            this.plSummaryMaterial.Name = "plSummaryMaterial";
+            this.plSummaryMaterial.resultText = null;
+            this.plSummaryMaterial.Size = new System.Drawing.Size(79, 20);
+            this.plSummaryMaterial.TabIndex = 39;
+            this.plSummaryMaterial.Text = "$0.00";
+            this.plSummaryMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plSummaryMaterial.value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            // 
             // tbOverhead
             // 
             this.tbOverhead.baseText = "0";
@@ -884,36 +1054,6 @@ namespace Estimator
             this.tbOverhead.Size = new System.Drawing.Size(79, 20);
             this.tbOverhead.TabIndex = 47;
             this.tbOverhead.Text = "0.00 %";
-            // 
-            // tbTotalBidPerSquare
-            // 
-            this.tbTotalBidPerSquare.baseText = "0";
-            this.tbTotalBidPerSquare.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbTotalBidPerSquare.Location = new System.Drawing.Point(220, 273);
-            this.tbTotalBidPerSquare.Name = "tbTotalBidPerSquare";
-            this.tbTotalBidPerSquare.resultText = "$0.00";
-            this.tbTotalBidPerSquare.Size = new System.Drawing.Size(79, 20);
-            this.tbTotalBidPerSquare.TabIndex = 46;
-            this.tbTotalBidPerSquare.Text = "$0.00";
-            // 
-            // tbTotalBid
-            // 
-            this.tbTotalBid.baseText = "0";
-            this.tbTotalBid.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbTotalBid.Location = new System.Drawing.Point(112, 273);
-            this.tbTotalBid.Name = "tbTotalBid";
-            this.tbTotalBid.resultText = "$0.00";
-            this.tbTotalBid.Size = new System.Drawing.Size(79, 20);
-            this.tbTotalBid.TabIndex = 44;
-            this.tbTotalBid.Text = "$0.00";
             // 
             // tbMiscAddOn2
             // 
@@ -944,126 +1084,6 @@ namespace Estimator
             this.tbMiscAddOn1.Size = new System.Drawing.Size(79, 20);
             this.tbMiscAddOn1.TabIndex = 40;
             this.tbMiscAddOn1.Text = "$0.00";
-            // 
-            // tbSummarySubtotalBidPerSquare
-            // 
-            this.tbSummarySubtotalBidPerSquare.baseText = "0";
-            this.tbSummarySubtotalBidPerSquare.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbSummarySubtotalBidPerSquare.Location = new System.Drawing.Point(220, 139);
-            this.tbSummarySubtotalBidPerSquare.Name = "tbSummarySubtotalBidPerSquare";
-            this.tbSummarySubtotalBidPerSquare.resultText = "$0.00";
-            this.tbSummarySubtotalBidPerSquare.Size = new System.Drawing.Size(79, 20);
-            this.tbSummarySubtotalBidPerSquare.TabIndex = 37;
-            this.tbSummarySubtotalBidPerSquare.Text = "$0.00";
-            // 
-            // tbSummarySubtotalBid
-            // 
-            this.tbSummarySubtotalBid.baseText = "0";
-            this.tbSummarySubtotalBid.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbSummarySubtotalBid.Location = new System.Drawing.Point(112, 139);
-            this.tbSummarySubtotalBid.Name = "tbSummarySubtotalBid";
-            this.tbSummarySubtotalBid.resultText = "$0.00";
-            this.tbSummarySubtotalBid.Size = new System.Drawing.Size(79, 20);
-            this.tbSummarySubtotalBid.TabIndex = 35;
-            this.tbSummarySubtotalBid.Text = "$0.00";
-            // 
-            // tbSummaryOtherPerSquare
-            // 
-            this.tbSummaryOtherPerSquare.baseText = "0";
-            this.tbSummaryOtherPerSquare.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbSummaryOtherPerSquare.Location = new System.Drawing.Point(220, 98);
-            this.tbSummaryOtherPerSquare.Name = "tbSummaryOtherPerSquare";
-            this.tbSummaryOtherPerSquare.resultText = "$0.00";
-            this.tbSummaryOtherPerSquare.Size = new System.Drawing.Size(79, 20);
-            this.tbSummaryOtherPerSquare.TabIndex = 34;
-            this.tbSummaryOtherPerSquare.Text = "$0.00";
-            // 
-            // tbSummaryLaborPerSquare
-            // 
-            this.tbSummaryLaborPerSquare.baseText = "0";
-            this.tbSummaryLaborPerSquare.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbSummaryLaborPerSquare.Location = new System.Drawing.Point(220, 70);
-            this.tbSummaryLaborPerSquare.Name = "tbSummaryLaborPerSquare";
-            this.tbSummaryLaborPerSquare.resultText = "$0.00";
-            this.tbSummaryLaborPerSquare.Size = new System.Drawing.Size(79, 20);
-            this.tbSummaryLaborPerSquare.TabIndex = 33;
-            this.tbSummaryLaborPerSquare.Text = "$0.00";
-            // 
-            // tbSummaryMatPerSquare
-            // 
-            this.tbSummaryMatPerSquare.baseText = "0";
-            this.tbSummaryMatPerSquare.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbSummaryMatPerSquare.Location = new System.Drawing.Point(220, 41);
-            this.tbSummaryMatPerSquare.Name = "tbSummaryMatPerSquare";
-            this.tbSummaryMatPerSquare.resultText = "$0.00";
-            this.tbSummaryMatPerSquare.Size = new System.Drawing.Size(79, 20);
-            this.tbSummaryMatPerSquare.TabIndex = 32;
-            this.tbSummaryMatPerSquare.Text = "$0.00";
-            // 
-            // tbOtherCosts
-            // 
-            this.tbOtherCosts.baseText = "0";
-            this.tbOtherCosts.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbOtherCosts.Location = new System.Drawing.Point(112, 98);
-            this.tbOtherCosts.Name = "tbOtherCosts";
-            this.tbOtherCosts.resultText = "$0.00";
-            this.tbOtherCosts.Size = new System.Drawing.Size(79, 20);
-            this.tbOtherCosts.TabIndex = 28;
-            this.tbOtherCosts.Text = "$0.00";
-            // 
-            // tbMetalRoofLabor
-            // 
-            this.tbMetalRoofLabor.baseText = "0";
-            this.tbMetalRoofLabor.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbMetalRoofLabor.Location = new System.Drawing.Point(112, 70);
-            this.tbMetalRoofLabor.Name = "tbMetalRoofLabor";
-            this.tbMetalRoofLabor.resultText = "$0.00";
-            this.tbMetalRoofLabor.Size = new System.Drawing.Size(79, 20);
-            this.tbMetalRoofLabor.TabIndex = 26;
-            this.tbMetalRoofLabor.Text = "$0.00";
-            // 
-            // tbMetalRoofMaterial
-            // 
-            this.tbMetalRoofMaterial.baseText = "0";
-            this.tbMetalRoofMaterial.currencyValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbMetalRoofMaterial.Location = new System.Drawing.Point(112, 41);
-            this.tbMetalRoofMaterial.Name = "tbMetalRoofMaterial";
-            this.tbMetalRoofMaterial.resultText = "$0.00";
-            this.tbMetalRoofMaterial.Size = new System.Drawing.Size(79, 20);
-            this.tbMetalRoofMaterial.TabIndex = 24;
-            this.tbMetalRoofMaterial.Text = "$0.00";
             // 
             // plOtherTotalCost
             // 
@@ -1610,19 +1630,6 @@ namespace Estimator
         private System.Windows.Forms.Label lOverhead;
         private System.Windows.Forms.Label lSummarySubtotalBid;
         private System.Windows.Forms.Label lTotalBid;
-        private CurrencyTextBox tbMetalRoofLabor;
-        private CurrencyTextBox tbMetalRoofMaterial;
-        private CurrencyTextBox tbSummaryOtherPerSquare;
-        private CurrencyTextBox tbSummaryLaborPerSquare;
-        private CurrencyTextBox tbSummaryMatPerSquare;
-        private CurrencyTextBox tbOtherCosts;
-        private CurrencyTextBox tbMiscAddOn2;
-        private CurrencyTextBox tbMiscAddOn1;
-        private CurrencyTextBox tbSummarySubtotalBidPerSquare;
-        private CurrencyTextBox tbSummarySubtotalBid;
-        private CurrencyTextBox tbTotalBidPerSquare;
-        private CurrencyTextBox tbTotalBid;
-        private PercentageTextBox tbOverhead;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn mColQNTY;
@@ -1675,6 +1682,19 @@ namespace Estimator
         private System.Windows.Forms.DataGridViewTextBoxColumn oColUnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn oColTotal;
         public MaterialGridView otherGridView;
+        public PriceLabel plSummaryTotal;
+        public PriceLabel plSummarySubtotalPerSquare;
+        public PriceLabel plSummarySubtotal;
+        public PriceLabel plSummaryOtherPerSquare;
+        public PriceLabel plSummaryOther;
+        public PriceLabel plSummaryLaborPerSquare;
+        public PriceLabel plSummaryLabor;
+        public PriceLabel plSummaryMatPerSquare;
+        public PriceLabel plSummaryMaterial;
+        public PriceLabel plSummaryTotalPerSquare;
+        public CurrencyTextBox tbMiscAddOn2;
+        public CurrencyTextBox tbMiscAddOn1;
+        public PercentageTextBox tbOverhead;
     }
 }
 

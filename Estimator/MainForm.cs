@@ -39,6 +39,9 @@ namespace Estimator
             tbWaste.Validated += new EventHandler(TB_Validated);
             tbSalesTax.Validated += new EventHandler(TB_Validated);
             tbLaborBurden.Validated += new EventHandler(TB_Validated);
+            tbOverhead.Validated += new EventHandler(TB_Validated);
+            tbMiscAddOn1.Validated += new EventHandler(TB_Validated);
+            tbMiscAddOn2.Validated += new EventHandler(TB_Validated);
 
             gridViewMats.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
             trimGridView.CellEndEdit += new DataGridViewCellEventHandler(TB_Validated);
